@@ -31,9 +31,8 @@
                 <div class="app-menu navbar-menu mx-auto opacity-0">
                     <div id="scrollbar">
                         <ul class="navbar-nav" id="navbar-nav">
-                        
-                                <a class="nav-link menu-link collapsed" href="#sidebarDashboards"
-                                    data-bs-toggle="collapse" role="button" aria-expanded="false">
+                                <a class="nav-link menu-link collapsed" href="../index"
+                                    role="button" >
                                     <i class="ph-gauge"></i> <span>Inicio</span>
                                 </a>
                           
@@ -42,7 +41,7 @@
                                 <a class="nav-link menu-link collapsed" href="#sidebarPages"
                                     data-bs-toggle="collapse" role="button" aria-expanded="false"
                                     aria-controls="sidebarPages">
-                                    <i class="ph-address-book"></i> <span>Fisico</span>
+                                    <i class="ph-address-book"></i> <span>Físico</span>
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarPages">
                                     <ul class="nav nav-sm flex-column">
@@ -56,7 +55,7 @@
                                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="auth-signin" class="nav-link" role="button">
+                                                        <a href="funcional" class="nav-link" role="button">
                                                             Entrenamiento funcional </a>
                                                     </li>
                                                     <li class="nav-item">
