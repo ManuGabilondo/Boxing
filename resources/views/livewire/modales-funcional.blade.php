@@ -13,19 +13,23 @@
     <div class="row">
         <!-- Primera columna -->
         <div class="col-md-6">
-            <img src="{{ URL::asset('images/ejercicios/ab.jpg') }}" alt="Flexiones" class="img-fluid mb-3 img-modal">
+          Abdominales
+            <img src="{{ URL::asset('images/ejercicios/ab.jpg') }}" alt="Abdominales" class="img-fluid mb-3 img-modal">
+          Plancha lateral  
             <img src="{{ URL::asset('images/ejercicios/plat.jpg') }}" alt="Plancha Lateral" class="img-fluid mb-3 img-modal">
         </div>
         <!-- Segunda columna -->
         <div class="col-md-6">
+          Crunch
             <img src="{{ URL::asset('images/ejercicios/crunch.jpg') }}" alt="Crunch" class="img-fluid mb-3 img-modal" >
+            Elevacón de rodillas
             <img src="{{ URL::asset('images/ejercicios/elro.jpg') }}" alt="Elevación de rodillas" class="img-fluid mb-3 img-modal">
         </div>
     </div>
 </div>
 </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
  </div>
@@ -45,19 +49,24 @@
               <div class="row">
                   <!-- Primera columna -->
                   <div class="col-md-6">
+                    Flexiones
                       <img src="{{ URL::asset('images/ejercicios/flex.jpg') }}" alt="Flexiones" class="img-fluid mb-3 img-modal">
+                      Fondos
                       <img src="{{ URL::asset('images/ejercicios/fond.jpg') }}" alt="Fondos de triceps" class="img-fluid mb-3 img-modal">
                   </div>
                   <!-- Segunda columna -->
                   <div class="col-md-6">
+                    Dominadas
+                    <br>
                       <img src="{{ URL::asset('images/ejercicios/dom.jpg') }}" alt="Dominadas" class="img-fluid mb-3 img-modal" >
+                     <br> Curl <br>
                       <img src="{{ URL::asset('images/ejercicios/curl.jpg') }}" alt="Curl de biceps con peso" class="img-fluid mb-3 img-modal">
                   </div>
               </div>
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
  </div>
@@ -77,19 +86,23 @@
           <div class="row">
               <!-- Primera columna -->
              <div class="col-md-6">
-                      <img src="{{ URL::asset('images/ejercicios/sent.jpg') }}" alt="Sentadilla" class="img-fluid mb-3 img-modal">
-                      <img src="{{ URL::asset('images/ejercicios/comba.jpeg') }}" alt="Comba" class="img-fluid mb-3 img-modal">
+              Sentadilla        
+              <img src="{{ URL::asset('images/ejercicios/sent.jpg') }}" alt="Sentadilla" class="img-fluid mb-3 img-modal">
+              Comba        
+              <img src="{{ URL::asset('images/ejercicios/comba.jpeg') }}" alt="Comba" class="img-fluid mb-3 img-modal">
                   </div>
                   <!-- Segunda columna -->
                   <div class="col-md-6">
-                      <img src="{{ URL::asset('images/ejercicios/hip.webp') }}" alt="HipThrust" class="img-fluid mb-3 img-modal" >
-                      <img src="{{ URL::asset('images/ejercicios/zanc.webp') }}" alt="Zancadas" class="img-fluid mb-3 img-modal">
+                    HipThrust  
+                    <img src="{{ URL::asset('images/ejercicios/hip.webp') }}" alt="HipThrust" class="img-fluid mb-3 img-modal" >
+                    Zancadas  
+                    <img src="{{ URL::asset('images/ejercicios/zanc.webp') }}" alt="Zancadas" class="img-fluid mb-3 img-modal">
                   </div>
           </div>
       </div>
             </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
  </div>

@@ -30,7 +30,7 @@
                         <p class="card-text">Dedicado a zona del abdomen, repetir por 5</p>
                         <ol class="list-unstyled">
                             <li>Abdominales</li>
-                            <li>PLancha Lateral</li>
+                            <li>Plancha Lateral</li>
                             <li>Crunch</li>
                             <li>Elevacion de rodillas</li>
                         </ol>

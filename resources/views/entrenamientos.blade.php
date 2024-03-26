@@ -3,18 +3,19 @@
     Entrenamiento personalizado
 @endsection
 @section('content')
-
     <section class="introduccion mt-4 py-5">
-        <h4 class="text-center mb-4">No tienes ningún entrenamiento personalizado</b></h4>
+        <h4 class="text-center mb-4">No tienes ningún entrenamiento para tí</b></h4>
     </section>
-
-                <div class="card">
+    <center>
+<div class="card w-75">
                     <div class="card-body text-truncate">
-                      Crear Entrenamiento personalizado
+                      Crear Plan de Entrenamiento Personalizado
+                      <i class="fa fa-plus text-info"></i>
                     </div>
                 </div>
-            </div>
-
+    </center>
+                
+           
 @section('scripts')
 <!-- App js -->
 <script src="{{ URL::asset('build/js/app.js') }}"></script>

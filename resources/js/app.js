@@ -1056,18 +1056,6 @@ File: Main Js File
 		}
 	}
 
-	// mark all read
-	if (document.getElementById("markRead")) {
-		document.getElementById("markRead").addEventListener("click", function () {
-			var notiElement = document.getElementById("notificationItemsTabContent");
-			if (notiElement) {
-				Array.from(notiElement.querySelectorAll(".notification-item.unread-message")).forEach((item) => {
-					item.classList.remove("unread-message");
-				});
-			}
-		});
-	}
-
 	// mark all clear
 	if (document.getElementById("deleteAllNotification")) {
 		document.getElementById("deleteAllNotification").addEventListener("click", function () {

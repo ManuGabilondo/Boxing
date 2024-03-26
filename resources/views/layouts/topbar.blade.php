@@ -33,7 +33,7 @@
                         <ul class="navbar-nav" id="navbar-nav">
                                 <a class="nav-link menu-link collapsed" href="../index"
                                     role="button" >
-                                    <i class="ph-gauge"></i> <span>Inicio</span>
+                                    <i class="fa fa-house"></i> <span>Inicio</span>
                                 </a>
                           
 
@@ -59,12 +59,12 @@
                                                             Entrenamiento funcional </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="auth-signup" class="nav-link" role="button">
+                                                        <a href="sombra" class="nav-link" role="button">
                                                             Sombra </a>
                                                     </li>
 
                                                     <li class="nav-item">
-                                                        <a href="auth-pass-reset" class="nav-link" role="button">
+                                                        <a href="cardio" class="nav-link" role="button">
                                                             Cardio
                                                         </a>
                                                     </li>
@@ -149,62 +149,7 @@
 
                 <div class="d-flex align-items-center opacity-0" id="header-items">
 
-                    <div class="dropdown ms-1 topbar-head-dropdown header-item">
-                        <button type="button" class="btn btn-icon btn-topbar rounded-circle"
-                            id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="bx bx-search align-middle fs-3xl"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                            aria-labelledby="page-header-search-dropdown">
-                            <form class="p-3">
-                                <div class="form-group m-0">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search ..."
-                                            aria-label="Recipient's username">
-                                        <button class="btn btn-primary" type="submit"><i
-                                                class="bi bi-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="dropdown ms-1 topbar-head-dropdown header-item">
-                        <button type="button" class="btn btn-icon btn-topbar rounded-circle"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @switch(Session::get('lang'))
-                              
-
-                                @case('sp')
-                                    <img src="{{ URL::asset('build/images/flags/spain.svg') }}" class="rounded"
-                                        alt="Header Language" height="20">
-                                @break
-                                @default
-                                    <img src="{{ URL::asset('build/images/flags/us.svg') }}" class="rounded"
-                                        alt="Header Language" height="20">
-                            @endswitch
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-
-                            <!-- item-->
-                            <a href="{{ url('index/en') }}" class="dropdown-item notify-item py-2" data-lang="en"
-                                title="English">
-                                <img src="https://img.themesbrand.com/judia/flags/us.svg" alt="user-image"
-                                    class="me-2 rounded" height="18">
-                                <span class="align-middle">English</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="{{ url('index/sp') }}" class="dropdown-item notify-item" data-lang="sp"
-                                title="Spanish">
-                                <img src="https://img.themesbrand.com/judia/flags/spain.svg" alt="user-image"
-                                    class="me-2 rounded" height="18">
-                                <span class="align-middle">Española</span>
-                            </a>
-                        </div>
-                    </div>
-
+                    
                     <div class="dropdown topbar-head-dropdown ms-1 header-item">
                         <button type="button" class="btn btn-icon btn-topbar rounded-circle mode-layout"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -227,28 +172,18 @@
                         </button>
                         <div class="dropdown-menu p-2 dropdown-menu-end">
                             <div class="d-flex gap-2 mb-3 topbar-profile">
-                                <div class="position-relative">
-                                     <i class="fas fa-user-circle user-circle"></i>
-                                    <span
-                                        class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success"><span
-                                            class="visually-hidden">unread messages</span></span>
-                                </div>
                                 <div>
                                     <h6 class="mb-1 fs-sm user-name">{{ @Auth::user()->name }}</h6>
-                                    <p class="mb-0 fw-medium fs-xs"><a href="#!">{{ @Auth::user()->email }}</a></p>
+                                    <p class="mb-0 fw-medium fs-xs"><a href="{{ @Auth::user()->email }}" target="_blank">{{ @Auth::user()->email }}</a></p>
                                 </div>
                             </div>
                             <a href="javascript:void(0)" class="dropdown-item"><i
-                                    class="bi bi-person align-middle me-2"></i> Profile</a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                    class="bi bi-chat-right-text align-middle me-2"></i> Messages</a>
+                                    class="bi bi-person align-middle me-2"></i> Perfil</a>
                             <a href="javascript:void(0)" class="dropdown-item"><i class="bi bi-gem align-middle me-2"></i>
-                                My Subscription</a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                    class="bi bi-person-gear align-middle me-2"></i> Account Settings</a>
+                                Mi Subscripción</a>
                             <a href="javascript:void(0)" class="dropdown-item" href="javascript:void();"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                    class="bi bi-box-arrow-right align-middle me-2"></i> Sign Out</a>
+                                    class="bi bi-box-arrow-right align-middle me-2"></i>Cerrar sesión</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                 style="display: none;">
                                 @csrf
@@ -260,61 +195,39 @@
         </div>
     </header>
 
-    <!-- removeNotificationModal -->
-    <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        id="NotificationModalbtn-close"></button>
-                </div>
-                <div class="modal-body p-md-5">
-                    <div class="text-center">
-                        <div class="text-danger">
-                            <i class="bi bi-trash display-4"></i>
-                        </div>
-                        <div class="mt-4 fs-base">
-                            <h4 class="mb-1">Are you sure ?</h4>
-                            <p class="text-muted mx-4 mb-0">Are you sure you want to remove this Notification ?</p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                        <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete
-                            It!</button>
-                    </div>
-                </div>
-
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- removeCartModal -->
-    <div id="removeCartModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        id="close-cartmodal"></button>
-                </div>
-                <div class="modal-body p-md-5">
-                    <div class="text-center">
-                        <div class="text-danger">
-                            <i class="bi bi-trash display-5"></i>
-                        </div>
-                        <div class="mt-4">
-                            <h4>Are you sure ?</h4>
-                            <p class="text-muted mx-4 mb-0">Are you sure you want to remove this product ?</p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                        <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn w-sm btn-danger" id="remove-cartproduct">Yes, Delete
-                            It!</button>
-                    </div>
-                </div>
-
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+  
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtén los botones de cambio de tema
+    const lightModeButton = document.querySelector('[data-mode="light"]');
+    const darkModeButton = document.querySelector('[data-mode="dark"]');
+
+    // Función para cambiar el tema
+    function changeTheme(theme) {
+        // Cambia el tema en el CSS (aquí necesitas implementar tu lógica para cambiar el tema)
+        // Por ejemplo, cambiar la clase del body o modificar variables CSS
+        document.body.classList.remove('dark-theme', 'light-theme');
+        document.body.classList.add(theme);
+
+        // Almacena la preferencia en LocalStorage
+        localStorage.setItem('theme', theme);
+    }
+
+    // Event listener para el botón de modo claro
+    lightModeButton.addEventListener('click', function() {
+        changeTheme('light-theme');
+    });
+
+    // Event listener para el botón de modo oscuro
+    darkModeButton.addEventListener('click', function() {
+        changeTheme('dark-theme');
+    });
+
+    // Carga el tema guardado en LocalStorage al cargar la página
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        changeTheme(savedTheme);
+    }
+});
+</script>
