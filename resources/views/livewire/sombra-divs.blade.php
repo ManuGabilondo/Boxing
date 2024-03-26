@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row my-4">
     <div class="col">
         <div class="card sombra-card mb-4">
             <img src="{{ URL::asset('images/ejercicios/guard.jpg') }}" class="card-img-top" alt="Imagen bajar barbilla">
