@@ -23,9 +23,9 @@ class Contacto extends Component
     public function submitForm()
     {
         $this->validate([
-            'nombre' => 'required|max:30',
+            'nombre' => 'required|max:30|alpha_dash',
             'email' => 'required|email|max:30',
-            'mensaje' => 'required|max:100',
+            'mensaje' => 'required|max:300'
         ]);
     }
 

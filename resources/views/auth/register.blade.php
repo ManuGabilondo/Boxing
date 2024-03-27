@@ -102,7 +102,7 @@ $random = rand(1, 5);
                                                 </div>
 
                                                 <div class="mt-4">
-                                                    <button class="btn btn-danger w-100" type="submit">Registrarse</button>
+                                                    <button class="btn button w-100" type="submit">Registrarse</button>
                                                 </div>
 
                                                 

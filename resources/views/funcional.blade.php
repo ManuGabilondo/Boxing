@@ -34,7 +34,7 @@
                             <li>Crunch</li>
                             <li>Elevacion de rodillas</li>
                         </ol>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#coreModal">
+                        <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#coreModal">
                     Ver ejercicios
                 </button>
                     </div>
@@ -52,7 +52,7 @@
                             <li>Dominadas</li>
                             <li>Curl de Biceps</li>
                         </ul>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#supModal">
+                        <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supModal">
                     Ver ejercicios
                 </button>
                     </div>
@@ -70,7 +70,7 @@
                             <li>HipThrust</li>
                             <li>Zancadas</li>
                         </ul>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#infModal">
+                        <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#infModal">
                     Ver ejercicios
                 </button>
                     </div>

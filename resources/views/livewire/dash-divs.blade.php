@@ -38,8 +38,8 @@
             <div class="col-md-4">
                 <div class="card dash-card">
                     <div class="card-body ">
-                        <h2 class="card-title">Dieta de definición</h2>
-                        <p class="card-text">Dietas y recomendaciones <br> para definicion corporal</p>
+                        <h2 class="card-title">Dietas</h2>
+                        <p class="card-text">Las mejores dietas par un eficaz <br> rendimiento físico</p>
                         <div class="d-flex justify-content-end">
                             <i class="fa-solid fa-carrot"></i>
                         </div>
@@ -49,8 +49,8 @@
             <div class="col-md-4">
                 <div class="card dash-card">
                     <div class="card-body ">
-                        <h2 class="card-title">Dieta de volumen</h2>
-                        <p class="card-text">Recomendaciones de comida para <br> ayudar a ganancia de volumen</p>
+                        <h2 class="card-title">Muro</h2>
+                        <p class="card-text">Consulta que han colgado en su muro otros usuarios</p>
                          <div class="d-flex justify-content-end">
                             <i class="fa-solid fa-burger"></i>
                         </div>
@@ -60,8 +60,8 @@
             <div class="col-md-4">
                 <div class="card dash-card">
                     <div class="card-body ">
-                        <h2 class="card-title">Dieta de mantenimiento</h2>
-                        <p class="card-text">Dietas de mantenimiento físico <br> saludables y recomendaciones</p>
+                        <h2 class="card-title">Nosotros</h2>
+                        <p class="card-text">Conoce sobre nuestra empresa</p>
                         <div class="d-flex justify-content-end">
                             <i class="fa-solid fa-bowl-food"></i>
                         </div>

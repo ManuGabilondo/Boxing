@@ -1,4 +1,4 @@
-<div class="card my-5 sobre-nosotros">
+<div id="sobre-nosotros" class="card my-5 sobre-nosotros">
     <div class="row g-0">
         <div class="col-md-5" style="background: url('{{ URL::asset('images/sobre-nosotros.jpg') }}') no-repeat center center; background-size: cover;" aria-label="Sobre nosotros">
                 </div>        

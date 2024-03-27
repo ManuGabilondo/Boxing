@@ -35,10 +35,6 @@
                                     role="button" >
                                     <i class="fa fa-house"></i> <span>Inicio</span>
                                 </a>
-                                <a class="nav-link menu-link collapsed" href="nosotros"
-                                    role="button" >
-                                    <i class="fa fa-info-circle"></i> <span>Sobre Nosotros</span>
-                                </a>
                                 
                                 
                           
@@ -84,7 +80,7 @@
                                             <div class="collapse menu-dropdown" id="sidebarErrors">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="auth-404"
+                                                        <a href="definicion"
                                                             class="nav-link">Dietas de definición</a>
                                                     </li>
                                                     <li class="nav-item">
