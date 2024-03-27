@@ -35,6 +35,12 @@
                                     role="button" >
                                     <i class="fa fa-house"></i> <span>Inicio</span>
                                 </a>
+                                <a class="nav-link menu-link collapsed" href="nosotros"
+                                    role="button" >
+                                    <i class="fa fa-info-circle"></i> <span>Sobre Nosotros</span>
+                                </a>
+                                
+                                
                           
 
                             <li class="nav-item">
@@ -173,7 +179,7 @@
                         <div class="dropdown-menu p-2 dropdown-menu-end">
                             <div class="d-flex gap-2 mb-3 topbar-profile">
                                 <div>
-                                    <h6 class="mb-1 fs-sm user-name">{{ @Auth::user()->name }}</h6>
+                                     <h6 class="mb-1 fs-sm user-name">{{ @Auth::user()->name }}</h6>
                                     <p class="mb-0 fw-medium fs-xs"><a href="{{ @Auth::user()->email }}" target="_blank">{{ @Auth::user()->email }}</a></p>
                                 </div>
                             </div>

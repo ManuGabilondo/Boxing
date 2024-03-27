@@ -16,6 +16,12 @@
     <!-- include head css -->
     @include('layouts.head-css')
     @livewireStyles
+
+    <!--TOAST-->
+    <!-- CSS de iziToast -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+<!-- JavaScript de iziToast -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
 </head>
 
 @yield('body')

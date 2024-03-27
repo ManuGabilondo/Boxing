@@ -9,6 +9,9 @@
 @endsection
 @livewire('carousel')
 @livewire('dash-divs')
+<hr>
+@livewire('sobre-nosotros')
+@livewire('contacto')
 @endsection
 @section('scripts')
 <!-- App js -->
