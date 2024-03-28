@@ -36,6 +36,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+                <a href="../dietas">
                 <div class="card dash-card">
                     <div class="card-body ">
                         <h2 class="card-title">Dietas</h2>
@@ -45,6 +46,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
                 <div class="card dash-card">
@@ -58,6 +60,7 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <a href="#sobre-nosotros">
                 <div class="card dash-card">
                     <div class="card-body ">
                         <h2 class="card-title">Nosotros</h2>
@@ -67,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
