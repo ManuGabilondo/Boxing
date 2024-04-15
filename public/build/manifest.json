@@ -1,0 +1,94 @@
+{
+  "resources/fonts/Phosphor.eot": {
+    "file": "icons/Phosphor.eot",
+    "src": "resources/fonts/Phosphor.eot"
+  },
+  "resources/fonts/Phosphor.svg": {
+    "file": "icons/Phosphor.svg",
+    "src": "resources/fonts/Phosphor.svg"
+  },
+  "resources/fonts/Phosphor.ttf": {
+    "file": "icons/Phosphor.ttf",
+    "src": "resources/fonts/Phosphor.ttf"
+  },
+  "resources/fonts/Phosphor.woff": {
+    "file": "icons/Phosphor.woff",
+    "src": "resources/fonts/Phosphor.woff"
+  },
+  "resources/fonts/Phosphor.woff2": {
+    "file": "icons/Phosphor.woff2",
+    "src": "resources/fonts/Phosphor.woff2"
+  },
+  "resources/fonts/bootstrap-icons.woff": {
+    "file": "icons/bootstrap-icons.woff",
+    "src": "resources/fonts/bootstrap-icons.woff"
+  },
+  "resources/fonts/bootstrap-icons.woff2": {
+    "file": "icons/bootstrap-icons.woff2",
+    "src": "resources/fonts/bootstrap-icons.woff2"
+  },
+  "resources/fonts/boxicons.eot": {
+    "file": "icons/boxicons.eot",
+    "src": "resources/fonts/boxicons.eot"
+  },
+  "resources/fonts/boxicons.svg": {
+    "file": "icons/boxicons.svg",
+    "src": "resources/fonts/boxicons.svg"
+  },
+  "resources/fonts/boxicons.ttf": {
+    "file": "icons/boxicons.ttf",
+    "src": "resources/fonts/boxicons.ttf"
+  },
+  "resources/fonts/boxicons.woff": {
+    "file": "icons/boxicons.woff",
+    "src": "resources/fonts/boxicons.woff"
+  },
+  "resources/fonts/boxicons.woff2": {
+    "file": "icons/boxicons.woff2",
+    "src": "resources/fonts/boxicons.woff2"
+  },
+  "resources/fonts/remixicon.eot": {
+    "file": "icons/remixicon.eot",
+    "src": "resources/fonts/remixicon.eot"
+  },
+  "resources/fonts/remixicon.svg": {
+    "file": "icons/remixicon.svg",
+    "src": "resources/fonts/remixicon.svg"
+  },
+  "resources/fonts/remixicon.ttf": {
+    "file": "icons/remixicon.ttf",
+    "src": "resources/fonts/remixicon.ttf"
+  },
+  "resources/fonts/remixicon.woff": {
+    "file": "icons/remixicon.woff",
+    "src": "resources/fonts/remixicon.woff"
+  },
+  "resources/fonts/remixicon.woff2": {
+    "file": "icons/remixicon.woff2",
+    "src": "resources/fonts/remixicon.woff2"
+  },
+  "resources/images/flags/us.svg": {
+    "file": "icons/us.svg",
+    "src": "resources/images/flags/us.svg"
+  },
+  "resources/scss/app.scss": {
+    "file": "css/app.min.css",
+    "isEntry": true,
+    "src": "resources/scss/app.scss"
+  },
+  "resources/scss/bootstrap.scss": {
+    "file": "css/bootstrap.min.css",
+    "isEntry": true,
+    "src": "resources/scss/bootstrap.scss"
+  },
+  "resources/scss/custom.scss": {
+    "file": "css/custom.min.css",
+    "isEntry": true,
+    "src": "resources/scss/custom.scss"
+  },
+  "resources/scss/icons.scss": {
+    "file": "css/icons.min.css",
+    "isEntry": true,
+    "src": "resources/scss/icons.scss"
+  }
+}

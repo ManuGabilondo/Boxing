@@ -11,11 +11,11 @@ $random = rand(1, 5);
         <div class="container">
             <div class="row justify-content-center h-24">
                 <div class="col-lg-5">
-                    <div class="card mb-0 p-0">
+                    <div class="card card-login mb-0 p-0">
                         <div class="row g-0">
                             <!--end col-->
                             <div class="col-xxl-12 mx-auto">
-                                <div class="card mb-0 border-0 shadow-none mb-0">
+                                <div class="card card-login mb-0 border-0 shadow-none mb-0">
                                     <div class="card-body p-sm-5">
                                         <div class="text-center">
                                               <img src="{{ URL::asset('images/login/05.jpg') }}" alt="SYPHUS" height="100px" class='img-responsive'>
