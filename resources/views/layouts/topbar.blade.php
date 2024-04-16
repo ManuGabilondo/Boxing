@@ -84,10 +84,10 @@
                                                             class="nav-link">Dietas de definición</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="auth-500" class="nav-link">Dietas para volumen</a>
+                                                        <a href="volumen" class="nav-link">Dietas para volumen</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="auth-503" class="nav-link">Dietas para mantenimiento</a>
+                                                        <a href="mantenimiento" class="nav-link">Dietas para mantenimiento</a>
                                                     </li>
                                                 </ul>
                                             </div>
