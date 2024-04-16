@@ -31,14 +31,14 @@
 .card:hover{
     transform: scale(1.01);
 }
-.fondo{
+/* .fondo{
     background-image: url(../../images/fondo.jpg);
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
         background-color: #464646;
-}
+} */
 /*ZONA LOGIN*/
 .login1 {
     background-image: url(../../images/login/01.jpg);
