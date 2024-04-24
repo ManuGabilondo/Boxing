@@ -8,7 +8,7 @@
     </section>
     <section class="mis-entrenamientos py-5">
             <h2 class="text-center mb-4">Mis Rutinas</h2>
-            <a href="entrenamientos"> 
+           <a href="{{ route('rutinas') }}"> 
     <div class="card">
                     <div class="card-body w-75">
                        Mis ejercicios

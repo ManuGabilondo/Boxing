@@ -30,7 +30,6 @@
         <div class="col-md-4">
             <div class="card dash-card" data-bs-toggle="modal" data-bs-target="#receta4">
                 <img  src='{{ URL::asset('images/dietas/pasta.jpg') }}'  class="img-responsive">
-               
             </div>
         </div>
         <div class="col-md-4">

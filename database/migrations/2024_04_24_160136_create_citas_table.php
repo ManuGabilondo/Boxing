@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rutinas', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->text('descripcion');
-            $table->string('imagen')->nullable();
+            $table->unsignedBigInteger('user_id'); // ID del usuario
+            $table->date('fecha_cita'); // Fecha de la cita
             $table->timestamps();
+            // Asegurarse de que el 'user_id' hace referencia a un usuario existente
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rutinas');
+        Schema::dropIfExists('citas');
     }
 };

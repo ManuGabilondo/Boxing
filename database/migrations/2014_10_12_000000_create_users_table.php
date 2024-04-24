@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
@@ -19,17 +17,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->text('avatar');
             $table->boolean('premium')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
-        User::create(['name' => 'admin', 'email' => 'admin@themesbrand.com', 'password' => Hash::make('12345678'), 'email_verified_at' => '2023-01-02 17:04:58', 'avatar' => 'avatar-1.jpg', 'created_at' => now(),]);
+        User::create(['name' => 'Manuel', 'email' => 'mngabilondo@gmail.com', 'password' => Hash::make('03Febrero04'), 'email_verified_at' => '2023-01-02 17:04:58', 'premium' => true]);
+        User::create(['name' => 'Cliente1', 'email' => 'cliente@gmail.com', 'password' => Hash::make('12345678'), 'email_verified_at' => '2023-01-02 17:04:58', 'premium' => false]);
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('users');
