@@ -160,3 +160,12 @@ textarea {
 font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}

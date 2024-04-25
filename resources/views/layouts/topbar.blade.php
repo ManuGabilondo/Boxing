@@ -105,7 +105,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarMultilevel">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"><b>Muro</b></a>
+                                            <a href="muro" class="nav-link"><b>Muro</b></a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse"
@@ -132,7 +132,7 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a href="#" class="nav-link">
+                                                                    <a href="usuarios" class="nav-link">
                                                                         Todos</a>
                                                                 </li>
                                                             </ul>

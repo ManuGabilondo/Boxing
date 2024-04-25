@@ -5,20 +5,42 @@
 @section('content')
     <section class="introduccion mt-4 py-5">
         @php
-            $rutinas = \App\Models\Rutina::where('user_id', auth()->id())->get();
-        @endphp
-        @if($rutinas->isEmpty())
-            <h4 class="text-center mb-4">No tienes ningún entrenamiento para ti</h4>
+        $rutinas = \App\Models\Rutina::with('user')->get();
+    @endphp
+    @if($rutinas->isEmpty())
+            <h2 class="text-center">No tienes rutinas personalizadas por ahora</h2>
         @else
-            @foreach($rutinas as $rutina)
-                <div class="card w-75">
-                    <img class="card-img-top" src="{{ $rutina->foto }}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{ $rutina->descripcion }}</p>
-                    </div>
+    @foreach($rutinas as $rutina)
+        <div class="card w-75">
+            @if($rutina->user)
+                <div class="card-header">
+                    {{ $rutina->user->name }}
                 </div>
-            @endforeach
-        @endif
+            @endif
+<hr>
+            <div class="card-body">
+                <p class="card-text">{{ $rutina->descripcion }}</p>
+                @if($rutina->imagen)
+                    <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Entrenamiento image">
+                @endif
+                <div class=" text-muted">
+                {{ $rutina->created_at->format('d/m/Y') }}
+            </div>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
+            Editar
+        </button>
+                 <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <div class=" text-muted text-right">
+                        <button type="submit" class="delete-button">X</button>
+                            </div>
+                        </form>
+            </div>
+        </div>
+        @livewire('editar-rutina', ['rutina' => $rutina])
+    @endforeach
+    @endif
     </section>
     <center>
         <div class="card w-75" data-toggle="modal" data-target="#crearPlanModal">
@@ -52,7 +74,7 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="submit" class="btn btn-primary">Guardar cambios</button>      </div>
+<button type="submit" class="btn btn-primary">Nueva rutina</button>      </div>
     </div>
     </form>      </div>
       
@@ -62,6 +84,7 @@
 
  @section('scripts')
 <!-- App js -->
+<script src="{{ URL::asset('build/js/app.js') }}"></script>
 {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

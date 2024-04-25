@@ -46,4 +46,13 @@ class UserController extends Controller
         // Pasa los entrenamientos a la vista
         return view('entrenamientos', ['rutinas' => $rutinas]);
     }
+    public function data()
+    {
+        return DataTables::of(User::query())
+            ->addColumn('actions', function ($user) {
+                return '<a href="' . route('users.edit', $user->id) . '">Edit</a> ' .
+                    '<a href="' . route('users.delete', $user->id) . '">Delete</a>';
+            })
+            ->make(true);
+    }
 }

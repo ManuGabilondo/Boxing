@@ -1,6 +1,7 @@
 <div class="container mt-3">
         <div class="row ">
             <div class="col-md-4">
+                <a href="entrenamientos">
                <div class="card dash-card">
         <div class="card-body ">
             <h2 class="card-title">Entrenamiento funcional</h2>
@@ -8,8 +9,10 @@
             <div class="d-flex justify-content-end">
                 <i class="fa-solid fa-dumbbell"></i>
             </div>
+            
         </div>
     </div>
+    </a>
             </div>
             <div class="col-md-4">
                 <div class="card dash-card">
@@ -50,6 +53,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card dash-card">
+                    <a href="muro">
                     <div class="card-body ">
                         <h2 class="card-title">Muro</h2>
                         <p class="card-text">Consulta que han colgado en su muro otros usuarios</p>
@@ -57,6 +61,7 @@
                             <i class="fa-solid fa-burger"></i>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4">
