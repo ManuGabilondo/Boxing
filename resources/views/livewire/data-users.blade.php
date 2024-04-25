@@ -4,7 +4,7 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Premium</th>
+                <th>Subscripción</th>
                 <th>Actions</th>
             </tr>
         </thead>

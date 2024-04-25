@@ -21,7 +21,7 @@ $(document).ready(function() {
         columns: [
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
-            {data:'premium', name:'premium', render: function(data, type, row){
+            {data:'premium', name:'subscripción', render: function(data, type, row){
                 if(data == 1){
                     return '<span class="badge badge-success">Premium</span>';
                 }else{
