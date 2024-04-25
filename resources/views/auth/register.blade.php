@@ -100,6 +100,10 @@ $random = rand(1, 5);
                                                     <p id="pass-upper" class="invalid fs-xs mb-2">En  <b>mayúscula</b> letras de (A-Z)</p>
                                                     <p id="pass-number" class="invalid fs-xs mb-0">Al menos <b>numeros entre</b> (0-9)</p>
                                                 </div>
+                                                <div>
+                                                    <label for="avatar" class="form-label">Foto de perfil</label>
+                                                    <input type="file" class="form-control" name="avatar" id="avatar">
+                                                </div>
 
                                                 <div class="mt-4">
                                                     <button class="btn button w-100" type="submit">Registrarse</button>

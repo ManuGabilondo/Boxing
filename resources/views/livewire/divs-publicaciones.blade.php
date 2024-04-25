@@ -6,7 +6,12 @@
         <div class="card w-75">
             @if($post->user)
                 <div class="card-header">
-                    {{ $post->user->name }} - <h5><b><u>{{$post->titulo}}</u></b></h5>
+                    {{ $post->user->name }} -
+                    <div class="text-right m-2">
+                     <img src="{{ asset('storage/' . $post->user->avatar) }}" alt="avatar" class="avatar-muro">
+
+                    </div>
+                    <h5><b><u>{{$post->titulo}}</u></b></h5>
                 </div>
             @endif
             <hr>

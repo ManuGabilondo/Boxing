@@ -202,3 +202,11 @@ font-family: Arial, sans-serif;
 #users-table tr:hover {
     background-color: #ddd;
 }
+.avatar {
+    width: 100%;
+    height: auto;
+}
+.avatar-muro {
+    width: 5%;
+    height: auto;
+}

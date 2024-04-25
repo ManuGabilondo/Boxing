@@ -21,16 +21,17 @@ class UserController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->avatar = $request->avatar;
         $user->password = Hash::make($request->password);
         $user->save();
-        // $this->reset(['name', 'email', 'password', 'level']);
-
+        return redirect()->route('login');
     }
 
     public function store(Request $request)
     {
-        $this->validate([
+        $this->validate($request, [
             'name' => 'required|string|min:4|max:20',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => 'required|email|unique:users|max:20',
             'password' => 'required|min:6|max:20',
         ]);
