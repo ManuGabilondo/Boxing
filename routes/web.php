@@ -21,6 +21,10 @@ Route::post('/create', [UserController::class, 'create'])->name('create');
 
 Route::get('/users/data', [App\Http\Controllers\UserController::class, 'data'])->name('users.data');
 
+Route::put('/users/{id}', [UserController::class, 'edit'])->name('users.edit');
+
+Route::delete('/users/{id}', [UserController::class, 'delete'])->name('users.delete');
+
 Route::post('/entrenamientos', [UserController::class, 'rutinas'])->name('rutinas');
 
 Route::post('/entrenamientos/store', [RutinaController::class, 'store'])->name('entrenamientos.store');

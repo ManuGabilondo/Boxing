@@ -12,6 +12,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input class="form-control" id="titulo" name="titulo" rows="3" value="{{ $rutina->titulo }}">
+                        </div>
+                        <div class="form-group">
                             <label for="descripcion">Descripción</label>
                             <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{ $rutina->descripcion }}</textarea>
                         </div>

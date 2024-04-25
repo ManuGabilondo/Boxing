@@ -12,6 +12,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'titulo' => 'required',
             'text' => 'required',
             'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -22,6 +23,7 @@ class PostController extends Controller
         }
 
         $post = new Post;
+        $post->titulo = $request->titulo;
         $post->text = $request->text;
         $post->foto = $imageName;
         $post->user_id = Auth::id();

@@ -169,3 +169,36 @@ font-family: Arial, sans-serif;
     text-align: center;
     line-height: 30px;
 }
+.table-container {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#users-table th {
+    background-color: #9f1f1f;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+#users-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#users-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#users-table tr:hover {
+    background-color: #ddd;
+}

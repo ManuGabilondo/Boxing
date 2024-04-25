@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('rutinas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->text('titulo');
             $table->text('descripcion');
             $table->string('imagen')->nullable();
             $table->timestamps();

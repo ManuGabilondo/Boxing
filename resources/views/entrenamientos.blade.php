@@ -14,7 +14,7 @@
         <div class="card w-75">
             @if($rutina->user)
                 <div class="card-header">
-                    {{ $rutina->user->name }}
+                    {{ $rutina->user->name }} - {{ $rutina->titulo}}
                 </div>
             @endif
 <hr>
@@ -64,6 +64,10 @@
       <div class="modal-body">
  <form action="{{ route('entrenamientos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input class="form-control" id="titulo" name="titulo" rows="3"></input>
+        </div>
         <div class="form-group">
             <label for="descripcion">Descripción</label>
             <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>

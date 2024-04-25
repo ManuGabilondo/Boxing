@@ -6,7 +6,7 @@
         <div class="card w-75">
             @if($post->user)
                 <div class="card-header">
-                    {{ $post->user->name }}
+                    {{ $post->user->name }} - <h5><b><u>{{$post->titulo}}</u></b></h5>
                 </div>
             @endif
             <hr>
@@ -16,7 +16,7 @@
                     <img src="{{ asset('storage/' . $post->foto) }}" alt="Post image">
                 @endif
             </div>
-            <div class=" text-muted text-right">
+            <div class=" text-muted text-right m-2">
                 {{ $post->created_at->format('d/m/Y') }}
             </div>
         </div>

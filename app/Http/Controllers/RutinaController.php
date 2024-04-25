@@ -11,6 +11,7 @@ class RutinaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'titulo' => 'required',
             'descripcion' => 'required',
             'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -21,6 +22,7 @@ class RutinaController extends Controller
         }
 
         $rutina = new Rutina;
+        $rutina->titulo = $request->titulo;
         $rutina->descripcion = $request->descripcion;
         $rutina->imagen = $imageName;
         $rutina->user_id = Auth::id();
@@ -40,10 +42,11 @@ class RutinaController extends Controller
         $rutina = Rutina::findOrFail($id);
 
         $request->validate([
+            'titulo' => 'required',
             'descripcion' => 'required',
             'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+        $rutina->titulo = $request->titulo;
         $rutina->descripcion = $request->descripcion;
 
         if ($request->imagen) {

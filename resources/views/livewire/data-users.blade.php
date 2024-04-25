@@ -1,9 +1,10 @@
-<div>
+<div class="table-container">
     <table id="users-table">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Premium</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -12,17 +13,3 @@
     </table>
 </div>
 
-<script>
-$(document).ready(function() {
-    $('#users-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: '{{ route('users.data') }}',
-        columns: [
-            { data: 'name', name: 'name' },
-            { data: 'email', name: 'email' },
-            { data: 'actions', name: 'actions', orderable: false, searchable: false }
-        ]
-    });
-});
-</script>
