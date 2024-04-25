@@ -9,7 +9,7 @@ Muro
 @endsection
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#postModal">
-  Añadir nuevo post
+   Publicar
 </button>
 @livewire('modal-posts')
 @livewire('divs-publicaciones')

@@ -132,7 +132,7 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a href="users" class="nav-link">
+                                                                    <a href="usuarios" class="nav-link">
                                                                         Todos</a>
                                                                 </li>
                                                             </ul>
