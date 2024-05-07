@@ -17,13 +17,26 @@ class UserController extends Controller
     }
     public function create(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'avatar' => 'nullable|image',
+        ]);
+
+        if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $filename = $file->getClientOriginalName();
+            $data['avatar'] = $file->storeAs('images', $filename, 'public');
+        }
 
         $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->avatar = $request->avatar;
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->avatar = $data['avatar'] ?? null;
         $user->password = Hash::make($request->password);
+
         $user->save();
+
         return redirect()->route('login');
     }
     public function table()

@@ -57,16 +57,16 @@
                                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="funcional" class="nav-link" role="button">
+                                                        <a href="{{route('funcional')}}" class="nav-link" role="button">
                                                             Entrenamiento funcional </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="sombra" class="nav-link" role="button">
+                                                        <a href="{{route('sombra')}}" class="nav-link" role="button">
                                                             Sombra </a>
                                                     </li>
 
                                                     <li class="nav-item">
-                                                        <a href="cardio" class="nav-link" role="button">
+                                                        <a href="{{route('cardio')}}" class="nav-link" role="button">
                                                             Cardio
                                                         </a>
                                                     </li>
@@ -80,14 +80,14 @@
                                             <div class="collapse menu-dropdown" id="sidebarErrors">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="definicion"
+                                                        <a href="{{route('definicion')}}"
                                                             class="nav-link">Dietas de definición</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="volumen" class="nav-link">Dietas para volumen</a>
+                                                        <a href="{{route('volumen')}}" class="nav-link">Dietas para volumen</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="mantenimiento" class="nav-link">Dietas para mantenimiento</a>
+                                                        <a href="{{route('mantenimiento')}}" class="nav-link">Dietas para mantenimiento</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -107,6 +107,7 @@
                                         <li class="nav-item">
                                             <a href="{{route('muro')}}" class="nav-link"><b>Muro</b></a>
                                         </li>
+                                        @if(Auth::user()->level == 1)
                                         <li class="nav-item">
                                             <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse"
                                                 role="button" aria-expanded="false"
@@ -127,6 +128,7 @@
                                                 </ul>
                                             </div>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </li>

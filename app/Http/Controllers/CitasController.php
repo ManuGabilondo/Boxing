@@ -41,7 +41,7 @@ class CitasController extends Controller
     public function edit($id)
     {
         $cita = Cita::find($id);
-        return view('editcita', compact('cita'));
+        return view('editcita', ['cita' => $cita]);
     }
     public function update(Request $request, $id)
     {

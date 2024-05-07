@@ -18,8 +18,9 @@
         <div class="card-body">
             <h5 class="card-title">{{ $cita->asunto }}</h5>
         </div>
-        <p class="">{{ $cita->fecha_cita }}</p>
-        <a href="{{ route('citas.edit', $cita->id) }}" class="btn btn-primary">Editar</a>
+       <b> <p class="text-center">{{ $cita->fecha_cita }}</p></b>
+        <hr>
+<a href="{{ route('citas.edit', $cita->id) }}" class="btn edit-button ">Editar</a>
         <form action="{{ route('citas.destroy', $cita->id) }}" method="POST">
             @csrf
             @method('DELETE')

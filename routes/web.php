@@ -49,10 +49,34 @@ Route::get('/citas', [CitasController::class, 'index'])->name('citas');
 
 Route::get('/citas/create', [CitasController::class, 'create'])->name('citas.create');
 
-Route::get('/citas/edit', [CitasController::class, 'edit'])->name('citas.edit');
+Route::get('/citas/{id}/edit', [CitasController::class, 'edit'])->name('citas.edit');
 
 Route::put('/citas/{id}', [CitasController::class, 'update'])->name('citas.update');
 
 Route::post('/citas/store', [CitasController::class, 'store'])->name('citas.store');
 
 Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.destroy');
+
+
+//RUTAS DE VISTAS
+
+
+Route::get('/funcional', function () {
+    return view('funcional');
+})->name('funcional');
+Route::get('/sombra', function () {
+    return view('sombra');
+})->name('sombra');
+Route::get('/cardio', function () {
+    return view('cardio');
+})->name('cardio');
+
+Route::get('/volumen', function () {
+    return view('volumen');
+})->name('volumen');
+Route::get('/mantenimiento', function () {
+    return view('mantenimiento');
+})->name('mantenimiento');
+Route::get('/definicion', function () {
+    return view('definicion');
+})->name('definicion');

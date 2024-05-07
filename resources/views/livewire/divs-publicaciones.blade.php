@@ -1,6 +1,6 @@
 <div>
     @php
-        $posts = \App\Models\Post::with('user')->get();
+        $posts = \App\Models\Post::with('user')->orderBy('created_at', 'desc')->get();
     @endphp
     @foreach($posts as $post)
         <div class="card w-75">
@@ -24,7 +24,7 @@
             <div class=" text-muted text-right m-2">
                 {{ $post->created_at->format('d/m/Y') }}
             </div>
-            @if(Auth::user()->nivel == 1)
+            @if(Auth::user()->nivel == 1|| Auth::user()->id == $post->user_id)
     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
         @csrf
         @method('DELETE')

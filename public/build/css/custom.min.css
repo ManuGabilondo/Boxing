@@ -219,3 +219,11 @@ font-family: Arial, sans-serif;
     width: 5%;
     height: auto;
 }
+.edit-button {
+    background-color: rgb(71, 60, 60);
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    align-self: flex-end;
+}
