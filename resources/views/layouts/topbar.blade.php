@@ -105,7 +105,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarMultilevel">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="muro" class="nav-link"><b>Muro</b></a>
+                                            <a href="{{route('muro')}}" class="nav-link"><b>Muro</b></a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse"
@@ -114,30 +114,16 @@
                                             </a>
                                             <div class="collapse menu-dropdown" id="sidebarAccount">
                                                 <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">Administradores
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#sidebarCrm" class="nav-link"
-                                                            data-bs-toggle="collapse" role="button"
-                                                            aria-expanded="false" aria-controls="sidebarCrm">
-                                                            Clientes
-                                                        </a>
-                                                        <div class="collapse menu-dropdown" id="sidebarCrm">
-                                                            <ul class="nav nav-sm flex-column">
-                                                                <li class="nav-item">
+                                                   
+                                                   <li class="nav-item">
                                                                     <a href="#" class="nav-link">
                                                                         Premium
                                                                     </a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a href="usuarios" class="nav-link">
+                                                                    <a href="{{route('table')}}" class="nav-link">
                                                                         Todos</a>
                                                                 </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -170,7 +156,7 @@
                     <div class="dropdown topbar-head-dropdown ms-2 header-item">
                         <button type="button" class="btn btn-icon rounded-circle" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-<img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="avatar">                        </button>
+                            <img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="avatar">                        </button>
                         <div class="dropdown-menu p-2 dropdown-menu-end">
                             <div class="d-flex gap-2 mb-3 topbar-profile">
                                 <div>
@@ -178,10 +164,14 @@
                                     <p class="mb-0 fw-medium fs-xs"><a href="{{ @Auth::user()->email }}" target="_blank">{{ @Auth::user()->email }}</a></p>
                                 </div>
                             </div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
+                            <a href="{{route('users.edit',Auth::user()->id)}}" class="dropdown-item"><i
                                     class="bi bi-person align-middle me-2"></i> Perfil</a>
+
                             <a href="javascript:void(0)" class="dropdown-item"><i class="bi bi-gem align-middle me-2"></i>
                                 Mi Subscripción</a>
+                            <a href="{{route('citas')}}" class="dropdown-item"><i class="bi bi-calendar align-middle me-2"></i>
+                                Citas</a>
+
                             <a href="javascript:void(0)" class="dropdown-item" href="javascript:void();"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                     class="bi bi-box-arrow-right align-middle me-2"></i>Cerrar sesión</a>

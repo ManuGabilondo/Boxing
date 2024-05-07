@@ -12,6 +12,7 @@
 @section('scripts')
 <!-- App js -->
 <script src="{{ URL::asset('build/js/app.js') }}"></script>
+
 <script>
 $(document).ready(function() {
     $('#users-table').DataTable({
@@ -28,9 +29,10 @@ $(document).ready(function() {
                     return '<span class="badge badge-danger">Free</span>';
                 }
             } },
-            { data: 'actions', name: 'actions', orderable: false, searchable: false }
+            { data: 'actions', name: 'acciones', orderable: false, searchable: false }
         ]
     });
 });
 </script>
+
 @endsection

@@ -26,6 +26,10 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('login');
     }
+    public function table()
+    {
+        return view('usuarios');
+    }
 
     public function store(Request $request)
     {
@@ -66,6 +70,24 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        return view('edit-user', ['user' => $user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'avatar' => 'nullable|image',
+        ]);
+        if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $filename = $file->getClientOriginalName();
+            $data['avatar'] = $file->storeAs('images', $filename, 'public');
+        }
+
+        $user->update($data);
         return view('edit-user', ['user' => $user]);
     }
 }

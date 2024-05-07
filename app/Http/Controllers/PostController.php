@@ -31,4 +31,12 @@ class PostController extends Controller
 
         return redirect()->back()->with('success', 'Post creado con éxito!');
     }
+
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect()->back()->with('success', 'Post eliminado con éxito!');
+    }
 }

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // ID del usuario
-            $table->date('fecha_cita'); // Fecha de la cita
+            $table->unsignedBigInteger('user_id');
+            $table->string('asunto');
+            $table->date('fecha_cita');
             $table->timestamps();
-            // Asegurarse de que el 'user_id' hace referencia a un usuario existente
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

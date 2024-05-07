@@ -24,6 +24,13 @@
             <div class=" text-muted text-right m-2">
                 {{ $post->created_at->format('d/m/Y') }}
             </div>
+            @if(Auth::user()->nivel == 1)
+    <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="delete-button">x</button>
+    </form>
+@endif
         </div>
     @endforeach
 </div>
