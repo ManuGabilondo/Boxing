@@ -132,21 +132,6 @@
                 </div>
 
                 <div class="d-flex align-items-center opacity-0" id="header-items">
-
-                    
-                    <div class="dropdown topbar-head-dropdown ms-1 header-item">
-                        <button type="button" class="btn btn-icon btn-topbar rounded-circle mode-layout"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bi bi-sun align-middle fs-3xl"></i>
-                        </button>
-                        <div class="dropdown-menu p-2 dropdown-menu-end" id="light-dark-mode">
-                            <a href="#!" class="dropdown-item" data-mode="light"><i
-                                    class="bi bi-sun align-middle me-2"></i> Por defecto (Claro)</a>
-                            <a href="#!" class="dropdown-item" data-mode="dark"><i
-                                    class="bi bi-moon align-middle me-2"></i> Oscuro</a>
-                        </div>
-                    </div>
-
                     
 
                     <div class="dropdown topbar-head-dropdown ms-2 header-item">

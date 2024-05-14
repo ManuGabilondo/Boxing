@@ -1,6 +1,6 @@
 @extends('layouts.master-without-nav')
 @section('title')
-    Entrar
+   Login
 @endsection
 @section('content')
 <?php

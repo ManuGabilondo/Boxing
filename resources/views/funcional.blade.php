@@ -81,7 +81,15 @@
     </section>
     <div>
         <h2 class="text-center mb-4">Videos</h2>
-        
+        <section>
+     @if(auth()->user()->premium == 1)
+            @livewire('videos-sombra')
+          @else
+            <div class="alert alert-warning" role="alert">
+              <i class="fas fa-lock"></i> No tienes acceso a estos videos. ¡Hazte premium para desbloquearlos!
+            </div>
+          @endif
+        </section>
     </div>
 {{-- @livewire('videos-funcional') --}}
 

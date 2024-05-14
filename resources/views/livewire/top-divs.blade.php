@@ -28,7 +28,7 @@
     $clientCount = User::where('nivel',3)->count();
 @endphp
 
-<div class="row" style="min-height: 200px;max-height:200px;">
+<div class="row" >
     <div class="col-xl-3 col-sm-6">
         <div class="card" style="min-height:150px;">
             <div class="card-body">

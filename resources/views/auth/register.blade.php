@@ -30,7 +30,7 @@ $random = rand(1, 5);
                                                     <input type="text"
                                                         class="form-control @error('name') is-invalid @enderror"
                                                         value="{{ old('name') }}" name="name" id="name"
-                                                        placeholder="Introduce tu nombre real" required>
+                                                        placeholder="Introduce tu nombre real" required maxlength="30">
                                                     @error('name')
                                                         <span class="invalid-feedback text-start" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@ $random = rand(1, 5);
                                                     <input type="email"
                                                         class="form-control @error('email') is-invalid @enderror"
                                                         name="email" value="{{ old('email') }}" id="useremail"
-                                                        placeholder="Introduce tu cuenta de correo electrónico" required>
+                                                        placeholder="Introduce tu cuenta de correo electrónico" required maxlength="30">
                                                     @error('email')
                                                         <span class="invalid-feedback text-start" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@ $random = rand(1, 5);
                                                         <input type="password"
                                                             class="form-control password-input pe-5 @error('password') is-invalid @enderror"
                                                             name="password" placeholder="Introduce una contraseña" id="password-input"
-                                                            required>
+                                                            required maxlength="30">
                                                         <button
                                                             class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                             type="button" id="password-addon"><i
@@ -79,7 +79,7 @@ $random = rand(1, 5);
                                                             class="form-control password-input pe-5 @error('password') is-invalid @enderror"
                                                             name="password_confirmation"
                                                             placeholder="Introduce la misma contraseña"
-                                                            id="confirm-password-input" required>
+                                                            id="confirm-password-input" required maxlength="30">
                                                         <button
                                                             class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                             type="button" id="password-addon"><i
@@ -88,8 +88,8 @@ $random = rand(1, 5);
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <p class="mb-0 fs-sm text-muted fst-italic">Al registrarte a Syphus aceptas nuetras
-                                                        the Judia <a href="pages-term-conditions"
+                                                    <p class="mb-0 fs-sm text-muted fst-italic">Al registrarte a Syphus aceptas nuestras
+                                                         <a href="pages-term-conditions"
                                                             class="text-primary text-decoration-underline fst-normal fw-medium">Condiciones de uso</a></p>
                                                 </div>
 

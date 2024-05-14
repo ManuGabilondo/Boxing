@@ -231,3 +231,26 @@ font-family: Arial, sans-serif;
     max-width: 500px;
     height: auto;
 }
+a {
+    text-decoration: none !important;
+    color: #000000; 
+}
+.component-wrapper {
+    display: block;
+}
+
+.livewire-component {
+    display: block;
+    margin-bottom: 20px; 
+}
+
+.hide-on-small-screens {
+    display: none; /* Oculta el contenedor por defecto */
+}
+
+/* Muestra el contenedor en pantallas grandes */
+@media screen and (min-width: 768px) {
+   .hide-on-small-screens {
+        display: block; /* Muestra el contenedor en pantallas grandes */
+    }
+}

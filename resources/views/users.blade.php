@@ -7,8 +7,14 @@
 @section('page-title')
 
 @endsection
-@livewire('top-divs')
-@livewire('data-users', ['model' => 'App\Models\User'])
+<div class="component-wrapper">
+    <div class="livewire-component">
+        @livewire('top-divs')
+    </div>
+    <div class="livewire-component">
+        @livewire('data-users', ['model' => 'App\Models\User'])
+    </div>
+</div>
 @endsection
 @section('scripts')
 <!-- App js -->
@@ -19,6 +25,7 @@ $(document).ready(function() {
     $('#users-table').DataTable({
         processing: true,
         serverSide: true,
+        responsive: true,
         ajax: '{{ route('users.data') }}',
         columns: [
             { data: 'name', name: 'name' },
@@ -31,7 +38,10 @@ $(document).ready(function() {
                 }
             } },
             { data: 'actions', name: 'acciones', orderable: false, searchable: false }
-        ]
+        ],
+        initComplete: function(settings, json) {
+            this.api().columns.adjust(); // Ajusta automáticamente los anchos de las columnas después de cargar la tabla
+        }
     });
 });
 </script>

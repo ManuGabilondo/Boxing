@@ -15,6 +15,7 @@
     </a>
             </div>
             <div class="col-md-4">
+            <a href="sombra">
                 <div class="card dash-card">
                     <div class="card-body ">
                         <h2 class="card-title">Sombra</h2>
@@ -24,8 +25,10 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
+            <a href="cardio">
                 <div class="card dash-card">
                     <div class="card-body ">
                         <h2 class="card-title">Cardio</h2>
@@ -36,6 +39,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <div class="row">
             <div class="col-md-4">

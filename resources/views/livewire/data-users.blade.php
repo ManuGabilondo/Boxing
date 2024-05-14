@@ -1,11 +1,11 @@
-<div class="table-container">
-    <table id="users-table">
+<div class="table-container" class="hide-on-small-screens">
+    <table id="users-table" >
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Subscripción</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
