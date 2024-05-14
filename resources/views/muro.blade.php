@@ -13,19 +13,24 @@ Muro
 </button>
 @livewire('modal-posts')
 <div style="display: flex;">
-    @livewire('divs-publicaciones')
-    
-    <br>
-    <ul>
-        <li>Respete a los demás usuarios</li>
-        <li>No publique contenido ofensivo</li>
-        <li>No publique contenido sexual</li>
-        <li>No publique contenido violento</li>
-        <li>No publique contenido que incite al odio</li>
-        <li>No publique contenido que incumpla derechos de autor</li>
-        <li>No publique contenido falso</li>
-        <li>No publique contenido que incumpla la ley</li>
-    </ul>
+   <div class="row">
+    <div class="col-md-9">
+        @livewire('divs-publicaciones')
+    </div>
+
+    <div class="col-md-3">
+        <ul>
+            <li>Respete a los demás usuarios</li>
+            <li>No publique contenido ofensivo</li>
+            <li>No publique contenido sexual</li>
+            <li>No publique contenido violento</li>
+            <li>No publique contenido que incite al odio</li>
+            <li>No publique contenido que incumpla derechos de autor</li>
+            <li>No publique contenido falso</li>
+            <li>No publique contenido que incumpla la ley</li>
+        </ul>
+    </div>
+</div>
 </div>
 @endsection
 @section('scripts')

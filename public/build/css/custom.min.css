@@ -227,3 +227,7 @@ font-family: Arial, sans-serif;
     text-decoration: none;
     align-self: flex-end;
 }
+.post-image {
+    max-width: 500px;
+    height: auto;
+}
