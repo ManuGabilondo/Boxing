@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->integer('nivel')->default(3);
-            $table->string('avatar')->nullable()->default('default.png');
+            $table->string('avatar')->nullable()->default('default.jpg');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('premium')->default(false);
