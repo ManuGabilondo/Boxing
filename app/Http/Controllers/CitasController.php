@@ -56,7 +56,7 @@ class CitasController extends Controller
         $cita->user_id = $request->user_id;
         $cita->save();
 
-        return back()->with('success', 'Cita actualizada con éxito.');
+        return view('citas')->with('success', 'Cita actualizada con éxito.');
     }
     public function destroy($id)
     {

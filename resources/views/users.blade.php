@@ -7,6 +7,7 @@
 @section('page-title')
 
 @endsection
+@livewire('top-divs')
 @livewire('data-users', ['model' => 'App\Models\User'])
 @endsection
 @section('scripts')

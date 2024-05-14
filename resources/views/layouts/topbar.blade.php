@@ -5,7 +5,7 @@
                 <div class="d-flex" id="header-logo">
                     <!-- LOGO -->
                     <div class="navbar-brand-box horizontal-logo">
-                        <a href="index" class="logo logo-light">
+                        <a href="{{route('root')}}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="https://img.themesbrand.com/judia/logo-sm.png" alt="SYPHUS" height="22">
                             </span>
@@ -31,7 +31,7 @@
                 <div class="app-menu navbar-menu mx-auto opacity-0">
                     <div id="scrollbar">
                         <ul class="navbar-nav" id="navbar-nav">
-                                <a class="nav-link menu-link collapsed" href="../index"
+                                <a class="nav-link menu-link collapsed" href="{{route('root')}}"
                                     role="button" >
                                     <i class="fa fa-house"></i> <span>Inicio</span>
                                 </a>
@@ -107,7 +107,7 @@
                                         <li class="nav-item">
                                             <a href="{{route('muro')}}" class="nav-link"><b>Muro</b></a>
                                         </li>
-                                        @if(Auth::user()->level == 1)
+                                        @if(Auth::user()->nivel == 1)
                                         <li class="nav-item">
                                             <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse"
                                                 role="button" aria-expanded="false"
@@ -115,12 +115,6 @@
                                             </a>
                                             <div class="collapse menu-dropdown" id="sidebarAccount">
                                                 <ul class="nav nav-sm flex-column">
-                                                   
-                                                   <li class="nav-item">
-                                                                    <a href="#" class="nav-link">
-                                                                        Premium
-                                                                    </a>
-                                                                </li>
                                                                 <li class="nav-item">
                                                                     <a href="{{route('table')}}" class="nav-link">
                                                                         Todos</a>
@@ -169,7 +163,7 @@
                             <a href="{{route('users.edit',Auth::user()->id)}}" class="dropdown-item"><i
                                     class="bi bi-person align-middle me-2"></i> Perfil</a>
 
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="bi bi-gem align-middle me-2"></i>
+                            <a href="{{route('subscripcion')}}" class="dropdown-item"><i class="bi bi-gem align-middle me-2"></i>
                                 Mi Subscripción</a>
                             <a href="{{route('citas')}}" class="dropdown-item"><i class="bi bi-calendar align-middle me-2"></i>
                                 Citas</a>

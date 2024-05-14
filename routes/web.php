@@ -12,7 +12,7 @@ Auth::routes(['verify' => true]);
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'root']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
@@ -57,7 +57,13 @@ Route::post('/citas/store', [CitasController::class, 'store'])->name('citas.stor
 
 Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.destroy');
 
+Route::get('subscripcion/{id}', [UserController::class, 'subscribir'])->name('subscripcion.edit');
 
+Route::put('subscripcion/{id}/update', [UserController::class, 'subscribirUpdate'])->name('subscripcion.update');
+
+Route::get('subscripcion', function () {
+    return view('subscripcion');
+})->name('subscripcion');
 //RUTAS DE VISTAS
 
 

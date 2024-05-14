@@ -103,4 +103,16 @@ class UserController extends Controller
         $user->update($data);
         return view('edit-user', ['user' => $user]);
     }
+
+    public function subscribir()
+    {
+        return view('pagos');
+    }
+    public function subscribirUpdate(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->premium = 1;
+        $user->save();
+        return view('subscripcion');
+    }
 }

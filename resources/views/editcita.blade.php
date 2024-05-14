@@ -19,8 +19,9 @@ Editar Cita
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('citas.update') }}" method="POST">
+            <form action="{{ route('citas.update', $cita->id) }}" method="POST">
                 @csrf
+                 @method('PUT')
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
                     <input type="text" class="form-control" id="asunto" name="asunto" required value="{{$cita->asunto}}">
