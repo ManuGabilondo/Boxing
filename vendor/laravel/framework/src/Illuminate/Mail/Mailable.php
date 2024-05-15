@@ -199,17 +199,17 @@ class Mailable implements MailableContract, Renderable
             $this->prepareMailableForDelivery();
 
             $mailer = $mailer instanceof MailFactory
-                            ? $mailer->mailer($this->mailer)
-                            : $mailer;
+                ? $mailer->mailer($this->mailer)
+                : $mailer;
 
             return $mailer->send($this->buildView(), $this->buildViewData(), function ($message) {
                 $this->buildFrom($message)
-                     ->buildRecipients($message)
-                     ->buildSubject($message)
-                     ->buildTags($message)
-                     ->buildMetadata($message)
-                     ->runCallbacks($message)
-                     ->buildAttachments($message);
+                    ->buildRecipients($message)
+                    ->buildSubject($message)
+                    ->buildTags($message)
+                    ->buildMetadata($message)
+                    ->runCallbacks($message)
+                    ->buildAttachments($message);
             });
         });
     }
@@ -231,7 +231,8 @@ class Mailable implements MailableContract, Renderable
         $queueName = property_exists($this, 'queue') ? $this->queue : null;
 
         return $queue->connection($connection)->pushOn(
-            $queueName ?: null, $this->newQueuedJob()
+            $queueName ?: null,
+            $this->newQueuedJob()
         );
     }
 
@@ -249,7 +250,9 @@ class Mailable implements MailableContract, Renderable
         $queueName = property_exists($this, 'queue') ? $this->queue : null;
 
         return $queue->connection($connection)->laterOn(
-            $queueName ?: null, $delay, $this->newQueuedJob()
+            $queueName ?: null,
+            $delay,
+            $this->newQueuedJob()
         );
     }
 
@@ -261,10 +264,10 @@ class Mailable implements MailableContract, Renderable
     protected function newQueuedJob()
     {
         return Container::getInstance()->make(SendQueuedMailable::class, ['mailable' => $this])
-                    ->through(array_merge(
-                        method_exists($this, 'middleware') ? $this->middleware() : [],
-                        $this->middleware ?? []
-                    ));
+            ->through(array_merge(
+                method_exists($this, 'middleware') ? $this->middleware() : [],
+                $this->middleware ?? []
+            ));
     }
 
     /**
@@ -280,7 +283,8 @@ class Mailable implements MailableContract, Renderable
             $this->prepareMailableForDelivery();
 
             return Container::getInstance()->make('mailer')->render(
-                $this->buildView(), $this->buildViewData()
+                $this->buildView(),
+                $this->buildViewData()
             );
         });
     }
@@ -399,8 +403,11 @@ class Mailable implements MailableContract, Renderable
     protected function markdownRenderer()
     {
         return tap(Container::getInstance()->make(Markdown::class), function ($markdown) {
-            $markdown->theme($this->theme ?: Container::getInstance()->get(ConfigRepository::class)->get(
-                'mail.markdown.theme', 'default')
+            $markdown->theme(
+                $this->theme ?: Container::getInstance()->get(ConfigRepository::class)->get(
+                    'mail.markdown.theme',
+                    'default'
+                )
             );
         });
     }
@@ -413,7 +420,7 @@ class Mailable implements MailableContract, Renderable
      */
     protected function buildFrom($message)
     {
-        if (! empty($this->from)) {
+        if (!empty($this->from)) {
             $message->from($this->from[0]['address'], $this->from[0]['name']);
         }
 
@@ -468,7 +475,9 @@ class Mailable implements MailableContract, Renderable
 
         foreach ($this->rawAttachments as $attachment) {
             $message->attachData(
-                $attachment['data'], $attachment['name'], $attachment['options']
+                $attachment['data'],
+                $attachment['name'],
+                $attachment['options']
             );
         }
 
@@ -610,7 +619,7 @@ class Mailable implements MailableContract, Renderable
      */
     public function to($address, $name = null)
     {
-        if (! $this->locale && $address instanceof HasLocalePreference) {
+        if (!$this->locale && $address instanceof HasLocalePreference) {
             $this->locale($address->preferredLocale());
         }
 
@@ -745,7 +754,7 @@ class Mailable implements MailableContract, Renderable
      */
     protected function addressesToArray($address, $name)
     {
-        if (! is_array($address) && ! $address instanceof Collection) {
+        if (!is_array($address) && !$address instanceof Collection) {
             $address = is_string($name) ? [['name' => $name, 'email' => $address]] : [$address];
         }
 
@@ -807,7 +816,7 @@ class Mailable implements MailableContract, Renderable
         }
 
         return collect($this->{$property})->contains(function ($actual) use ($expected) {
-            if (! isset($expected['name'])) {
+            if (!isset($expected['name'])) {
                 return $actual['address'] == $expected['address'];
             }
 
@@ -856,7 +865,7 @@ class Mailable implements MailableContract, Renderable
     public function hasSubject($subject)
     {
         return $this->subject === $subject ||
-               (method_exists($this, 'envelope') && $this->envelope()->hasSubject($subject));
+            (method_exists($this, 'envelope') && $this->envelope()->hasSubject($subject));
     }
 
     /**
@@ -953,9 +962,9 @@ class Mailable implements MailableContract, Renderable
         }
 
         $this->attachments = collect($this->attachments)
-                    ->push(compact('file', 'options'))
-                    ->unique('file')
-                    ->all();
+            ->push(compact('file', 'options'))
+            ->unique('file')
+            ->all();
 
         return $this;
     }
@@ -1028,15 +1037,15 @@ class Mailable implements MailableContract, Renderable
      */
     private function hasEnvelopeAttachment($attachment, $options = [])
     {
-        if (! method_exists($this, 'envelope')) {
+        if (!method_exists($this, 'envelope')) {
             return false;
         }
 
         $attachments = $this->attachments();
 
         return Collection::make(is_object($attachments) ? [$attachments] : $attachments)
-                ->map(fn ($attached) => $attached instanceof Attachable ? $attached->toMailAttachment() : $attached)
-                ->contains(fn ($attached) => $attached->isEquivalent($attachment, $options));
+            ->map(fn ($attached) => $attached instanceof Attachable ? $attached->toMailAttachment() : $attached)
+            ->contains(fn ($attached) => $attached->isEquivalent($attachment, $options));
     }
 
     /**
@@ -1069,7 +1078,7 @@ class Mailable implements MailableContract, Renderable
             'name' => $name ?? basename($path),
             'options' => $options,
         ])->unique(function ($file) {
-            return $file['name'].$file['disk'].$file['path'];
+            return $file['name'] . $file['disk'] . $file['path'];
         })->all();
 
         return $this;
@@ -1118,10 +1127,10 @@ class Mailable implements MailableContract, Renderable
     public function attachData($data, $name, array $options = [])
     {
         $this->rawAttachments = collect($this->rawAttachments)
-                ->push(compact('data', 'name', 'options'))
-                ->unique(function ($file) {
-                    return $file['name'].$file['data'];
-                })->all();
+            ->push(compact('data', 'name', 'options'))
+            ->unique(function ($file) {
+                return $file['name'] . $file['data'];
+            })->all();
 
         return $this;
     }
@@ -1165,7 +1174,7 @@ class Mailable implements MailableContract, Renderable
     public function hasTag($value)
     {
         return in_array($value, $this->tags) ||
-               (method_exists($this, 'envelope') && in_array($value, $this->envelope()->tags));
+            (method_exists($this, 'envelope') && in_array($value, $this->envelope()->tags));
     }
 
     /**
@@ -1192,7 +1201,7 @@ class Mailable implements MailableContract, Renderable
     public function hasMetadata($key, $value)
     {
         return (isset($this->metadata[$key]) && $this->metadata[$key] === $value) ||
-               (method_exists($this, 'envelope') && $this->envelope()->hasMetadata($key, $value));
+            (method_exists($this, 'envelope') && $this->envelope()->hasMetadata($key, $value));
     }
 
     /**
@@ -1311,12 +1320,12 @@ class Mailable implements MailableContract, Renderable
      */
     private function formatAssertionRecipient($address, $name = null)
     {
-        if (! is_string($address)) {
+        if (!is_string($address)) {
             $address = json_encode($address);
         }
 
         if (filled($name)) {
-            $address .= ' ('.$name.')';
+            $address .= ' (' . $name . ')';
         }
 
         return $address;
@@ -1585,7 +1594,8 @@ class Mailable implements MailableContract, Renderable
             $this->prepareMailableForDelivery();
 
             $html = Container::getInstance()->make('mailer')->render(
-                $view = $this->buildView(), $this->buildViewData()
+                $view = $this->buildView(),
+                $this->buildViewData()
             );
 
             if (is_array($view) && isset($view[1])) {
@@ -1594,9 +1604,10 @@ class Mailable implements MailableContract, Renderable
 
             $text ??= $view['text'] ?? '';
 
-            if (! empty($text) && ! $text instanceof Htmlable) {
+            if (!empty($text) && !$text instanceof Htmlable) {
                 $text = Container::getInstance()->make('mailer')->render(
-                    $text, $this->buildViewData()
+                    $text,
+                    $this->buildViewData()
                 );
             }
 
@@ -1628,7 +1639,7 @@ class Mailable implements MailableContract, Renderable
      */
     private function ensureHeadersAreHydrated()
     {
-        if (! method_exists($this, 'headers')) {
+        if (!method_exists($this, 'headers')) {
             return;
         }
 
@@ -1656,7 +1667,7 @@ class Mailable implements MailableContract, Renderable
      */
     private function ensureEnvelopeIsHydrated()
     {
-        if (! method_exists($this, 'envelope')) {
+        if (!method_exists($this, 'envelope')) {
             return;
         }
 
@@ -1696,7 +1707,7 @@ class Mailable implements MailableContract, Renderable
      */
     private function ensureContentIsHydrated()
     {
-        if (! method_exists($this, 'content')) {
+        if (!method_exists($this, 'content')) {
             return;
         }
 
@@ -1734,7 +1745,7 @@ class Mailable implements MailableContract, Renderable
      */
     private function ensureAttachmentsAreHydrated()
     {
-        if (! method_exists($this, 'attachments')) {
+        if (!method_exists($this, 'attachments')) {
             return;
         }
 

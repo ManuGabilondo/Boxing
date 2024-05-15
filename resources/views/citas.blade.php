@@ -16,16 +16,21 @@
            @foreach($citas as $cita)
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ $cita->asunto }}</h5>
+            <h5 class="card-title">Asunto/Título : {{ $cita->asunto }}</h5>
         </div>
-       <b> <p class="text-center">{{ $cita->fecha_cita }}</p></b>
-        <hr>
-<a href="{{ route('citas.edit', $cita->id) }}" class="btn edit-button ">Editar</a>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
-                Borrar
+       <b> <p class="text-center">Fecha de la cita: {{ $cita->fecha_cita }}</p></b>
+     
+       <p class="text-center">Profesional en cargo: Dylan Leon</p>
+
+       <hr>
+<a href="{{ route('citas.edit', $cita->id) }}" class=" edit-button ">Editar</a>
+        <button type="button" class=" delete-button text-center" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
+               X
             </button>
         </div>
-
+     <small> Recuerda que el día de tu cita te pondrá en contacto contigo uno de nuestros profesionales por email,
+       para cualquier duda o consulta no dudes en ponerte en contacto con nosotros por <a href="mngabilondo@gmail.com">nuestra dirección email</a>.
+      </small> 
         <!-- Modal -->
         <div class="modal fade" id="deleteModal{{ $cita->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $cita->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">

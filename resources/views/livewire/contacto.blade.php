@@ -4,7 +4,7 @@
             <div class="card-body">
                 <h3 class="display-4">CONTÁCTANOS</h3>
                 <hr>
-                <form action="" method="post">
+                <form action="mailto:mngabilondo@gmail.com" method="POST">
     @csrf
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre<span class="text-danger">*</span></label>
@@ -27,7 +27,9 @@
                                                             class="text-danger">*</span></label>
         <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required maxlength="300"></textarea>
     </div>
+
     <button type="submit" class="btn button">ENVIAR</button>
+
 </form>
             </div>
         </div>
@@ -35,28 +37,3 @@
         </div>
     </div>
 </div>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $mensaje = $_POST['mensaje'];
-    $destinatario = "mngabilondo@gmail.com"; // Tu dirección de correo electrónico
-
-    $asunto = "Nuevo mensaje de contacto desde el sitio web";
-    $cuerpo = "Nombre: $nombre\n";
-    $cuerpo.= "Email: $email\n";
-    $cuerpo.= "Teléfono: $telefono\n";
-    $cuerpo.= "Mensaje: $mensaje\n";
-
-    $headers = "From: $email\r\n";
-    $headers.= "Reply-To: $email\r\n";
-    $headers.= "X-Mailer: PHP/". phpversion();
-
-    if (mail($destinatario, $asunto, $cuerpo, $headers)) {
-        echo "<script>alert('Mensaje enviado exitosamente.');</script>";
-    } else {
-        echo "<script>alert('Hubo un error al enviar el mensaje.');</script>";
-    }
-}

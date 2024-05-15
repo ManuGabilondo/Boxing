@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RutinaController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\ContactFormMailable;
 
 Auth::routes(['verify' => true]);
 
@@ -60,6 +61,9 @@ Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.d
 Route::get('subscripcion/{id}', [UserController::class, 'subscribir'])->name('subscripcion.edit');
 
 Route::put('subscripcion/{id}/update', [UserController::class, 'subscribirUpdate'])->name('subscripcion.update');
+
+Route::post('/contacto', [ContactFormMailable::class, 'enviar'])->name('contacto.send');
+
 
 Route::get('subscripcion', function () {
     return view('subscripcion');
