@@ -27,7 +27,7 @@ Citas del usuario
                 </div>
                 <div class="form-group">
     <label for="fecha_cita">Fecha de la cita</label>
-    <input type="text" id="fecha_cita" name="fecha_cita" required>
+    <input type="text" id="fecha_cita" name="fecha_cita" autocomplete="nope" required>
 </div>
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <button type="submit" class="btn btn-primary">Guardar</button>

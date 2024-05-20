@@ -12,9 +12,8 @@
         Solo letras y números
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label">Email<span
-                                                            class="text-danger">*</span></label>
-        <input type="email" class="form-control" id="email" name="email" required maxlength="30">
+        <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required maxlength="30">
         Utiliza un email válido
     </div>
     <div class="mb-3">

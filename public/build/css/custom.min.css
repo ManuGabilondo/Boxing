@@ -1,20 +1,23 @@
+.logo-app{
+    width: 4rem;
+}
 .button {
-    background-color: #333; /* Gris oscuro */
-    color: #fff; /* Texto blanco */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    text-align: center; /* Texto centrado */
-    text-decoration: none; /* Sin subrayado */
-    display: inline-block; /* Para que se alinee con otros elementos */
-    font-size: 16px; /* Tamaño de la fuente */
-    margin: 4px 2px; /* Espaciado externo */
-    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    background-color: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
 }
 
 
 .button:hover {
-    background-color: #555; /* Gris un poco más claro al pasar el ratón por encima */
+    background-color: #555; 
 }
 .card {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -93,7 +96,7 @@
     text-align: center;
     color: #666;
     font-size: 16px;
-    margin-bottom: 20px
+    margin-bottom: 15%
 }
 
 /* RESPONSIVE */
@@ -249,12 +252,11 @@ a {
 }
 
 .hide-on-small-screens {
-    display: none; /* Oculta el contenedor por defecto */
+    display: none; 
 }
 
-/* Muestra el contenedor en pantallas grandes */
 @media screen and (min-width: 768px) {
    .hide-on-small-screens {
-        display: block; /* Muestra el contenedor en pantallas grandes */
+        display: block; 
     }
 }

@@ -1,15 +1,12 @@
-<div class="table-container" class="hide-on-small-screens">
-    <table id="users-table" >
+<div class="table-responsive">
+    <table id="users-table" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Email</th>
                 <th>Subscripción</th>
                 <th>Acciones</th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
     </table>
 </div>
-

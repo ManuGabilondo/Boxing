@@ -14,20 +14,29 @@
         @endphp
         @if($citas->count())
            @foreach($citas as $cita)
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Asunto/Título : {{ $cita->asunto }}</h5>
-        </div>
-       <b> <p class="text-center">Fecha de la cita: {{ $cita->fecha_cita }}</p></b>
-     
-       <p class="text-center">Profesional en cargo: Dylan Leon</p>
 
-       <hr>
-<a href="{{ route('citas.edit', $cita->id) }}" class=" edit-button ">Editar</a>
-        <button type="button" class=" delete-button text-center" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
-               X
+
+   <div class="card mb-4 shadow-sm">
+    <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
+    <h5 class="card-title ">Asunto/Título: <strong>{{ $cita->asunto }}</strong></h5>
+
+    </div>
+    <div class="card-body">
+        <p class="card-text text-center font-weight-bold">Fecha de la cita: {{ $cita->fecha_cita }}</p>
+        <p class="card-text text-center">Profesional en cargo: <strong>Dylan Leon</strong></p>
+        <hr>
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('citas.edit', $cita->id) }}" class="btn btn-primary btn-sm">Editar</a>
+            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
+                Eliminar
             </button>
         </div>
+    </div>
+</div>
+
+
+
+
      <small> Recuerda que el día de tu cita te pondrá en contacto contigo uno de nuestros profesionales por email,
        para cualquier duda o consulta no dudes en ponerte en contacto con nosotros por <a href="mngabilondo@gmail.com">nuestra dirección email</a>.
       </small> 

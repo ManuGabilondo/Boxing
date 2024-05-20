@@ -11,33 +11,32 @@
             <h2 class="text-center">No tienes rutinas personalizadas por ahora</h2>
         @else
     @foreach($rutinas as $rutina)
-        <div class="card w-75">
-            @if($rutina->user)
-                <div class="card-header">
-                    {{ $rutina->user->name }} - {{ $rutina->titulo}}
-                </div>
-            @endif
-<hr>
-            <div class="card-body">
-                <p class="card-text">{{ $rutina->descripcion }}</p>
-                @if($rutina->imagen)
-                    <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Entrenamiento image">
-                @endif
-                <div class=" text-muted">
-                {{ $rutina->created_at->format('d/m/Y') }}
-            </div>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
+    <div class="card w-75 mx-auto mb-4 shadow-sm">
+    @if($rutina->user)
+        <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
+            <span>{{ $rutina->user->name }} - {{ $rutina->titulo}}</span>
+            <small class="text-light">{{ $rutina->created_at->format('d/m/Y') }}</small>
+        </div>
+    @endif
+    <div class="card-body">
+        <p class="card-text">{{ $rutina->descripcion }}</p>
+        @if($rutina->imagen)
+            <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Imagen de entrenamiento" class="img-fluid rounded mb-3">
+        @endif
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
             Editar
         </button>
-                 <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
+    </div>
+    <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <div class=" text-muted text-right">
                         <button type="submit" class="delete-button">X</button>
                             </div>
                         </form>
-            </div>
-        </div>
+</div>
+                
+       
         @livewire('editar-rutina', ['rutina' => $rutina])
     @endforeach
     @endif

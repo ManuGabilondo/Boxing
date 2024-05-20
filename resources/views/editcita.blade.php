@@ -28,7 +28,7 @@ Editar Cita
                 </div>
                 <div class="form-group">
     <label for="fecha_cita">Fecha de la cita</label>
-    <input type="text" id="fecha_cita" name="fecha_cita" required value="{{$cita->fecha_cita}}">
+    <input type="text" id="fecha_cita" autocomplete="nope" name="fecha_cita" required value="{{$cita->fecha_cita}}">
 </div>
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <button type="submit" class="btn btn-primary">Guardar</button>

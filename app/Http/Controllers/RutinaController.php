@@ -40,24 +40,24 @@ class RutinaController extends Controller
     public function update(Request $request, $id)
     {
         $rutina = Rutina::findOrFail($id);
-
+    
         $request->validate([
             'titulo' => 'required',
             'descripcion' => 'required',
             'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+    
         $rutina->titulo = $request->titulo;
         $rutina->descripcion = $request->descripcion;
-
-        if ($request->imagen) {
+    
+        if ($request->hasFile('imagen')) {
             $imageName = $request->imagen->store('images', 'public');
+            $rutina->imagen = $imageName;
         }
-
-        // Asegúrate de que estás estableciendo el 'user_id'
+    
         $rutina->user_id = auth()->id();
-        $rutina->imagen = $imageName;
         $rutina->save();
-
+    
         return redirect()->back()->with('success', 'Entrenamiento actualizado con éxito!');
     }
 }

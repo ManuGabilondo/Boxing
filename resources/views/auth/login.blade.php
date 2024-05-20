@@ -18,7 +18,8 @@ $random = rand(1, 5);
                                 <div class="card card-login mb-0 border-0 shadow-none mb-0">
                                     <div class="card-body p-sm-5">
                                         <div class="text-center">
-                                              <img src="{{ URL::asset('images/login/05.jpg') }}" alt="SYPHUS" height="100px" class='img-responsive'>
+                                              <!-- <img src="{{ URL::asset('images/login/05.jpg') }}" alt="SYPHUS" height="100px" class='img-responsive'> -->
+                                              <img src="{{ URL::asset('images/syphus.jpeg') }}" alt="SYPHUS" height="100px" class='img-responsive'>
                                         </div>
                                         <div class="p-2 ">
                                             <form method="POST" action="{{ route('login') }}">

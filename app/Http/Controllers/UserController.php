@@ -16,29 +16,47 @@ class UserController extends Controller
         return view('auth.register');
     }
     public function create(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'avatar' => 'nullable|image',
-        ]);
+{
+    // Validar los datos de entrada
+    $validatedData = $request->validate([
+        'name' => 'required|string|min:4|max:20',
+        'email' => 'required|email|unique:users,email|max:255',
+        'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'password' => 'required|string|min:6|max:20',
+    ]);
 
+    try {
+    
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $filename = $file->getClientOriginalName();
-            $data['avatar'] = $file->storeAs('images', $filename, 'public');
+            $validatedData['avatar'] = $file->storeAs('images', $filename, 'public');
         }
 
+        // Crear el usuario
         $user = new User;
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->avatar = $data['avatar'] ?? null;
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->avatar = $validatedData['avatar'] ?? null;
         $user->password = Hash::make($request->password);
 
         $user->save();
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Usuario creado con éxito');
+    } catch (\Exception $e) {
+  
+        if ($e instanceof \Illuminate\Database\QueryException) {
+            $errorCode = $e->errorInfo[1];
+
+            if ($errorCode == 1062) { 
+                return redirect()->back()->withErrors(['email' => 'El email ya está registrado.']);
+            }
+        }
+
+        // Error general
+        return redirect()->back()->withErrors(['general' => 'Ocurrió un error al crear el usuario.']);
     }
+}
     public function table()
     {
         return view('usuarios');
@@ -69,8 +87,14 @@ class UserController extends Controller
     {
         return DataTables::of(User::query())
             ->addColumn('actions', function ($user) {
-                return '<a href="' . route('users.edit', $user->id) . '" class="badge badge-primary">Edit</a> ' .
-                    '<a href="' . route('users.delete', $user->id) . '" class="badge badge-danger">Delete</a>';
+                return '<a href="' . route('users.edit', $user->id) . '" class="badge badge-secondary">Editar Usuario</a> ' 
+                // .
+                //     '<form class="badge badge-danger" action="' . route('users.delete', $user->id) . '" method="POST" style="display:inline;">
+                //     ' . csrf_field() . '
+                //     ' . method_field('DELETE') . '
+                //     <button type="submit" class="badge badge-danger" style="border:none; background:none;">Delete</button>
+                // </form>'
+                ;
             })
             ->rawColumns(['actions'])
             ->make(true);

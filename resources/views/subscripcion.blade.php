@@ -6,21 +6,22 @@
 @endsection
 @section('content')
 
-   <div>
-    <h1>Tu suscripción</h1>
+<h1>Tu suscripción</h1>
     @if(auth()->user()->premium == 1)
         <div class="alert alert-success" role="alert">
             ¡Tienes una suscripción activa y acceso a todos los datos!
         </div>
-    @else
+        @else
         <div class="alert alert-warning" role="alert">
             No tienes una suscripción activa.
         </div>
         <div>
-            <a href="{{ route('subscripcion.edit', auth()->user()->id) }}" class="btn btn-primary">Suscríbete ahora</a>
+        @include('components.subs')
+            
         </div>
     @endif
-</div>
+
+
 @endsection
 @section('scripts')
 <!-- App js -->

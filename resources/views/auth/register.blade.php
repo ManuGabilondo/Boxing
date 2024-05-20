@@ -22,6 +22,21 @@ $random = rand(1, 5);
                                             <h5 class="fs-3xl">Crea tu cuenta gratuita</h5>
                                         </div>
                                         <div class="p-2 mt-5">
+                                        @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                                             <form method="POST" action="{{ route('create') }}" class="needs-validation" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="mb-3">

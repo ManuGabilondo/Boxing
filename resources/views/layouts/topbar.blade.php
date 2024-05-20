@@ -1,18 +1,19 @@
 <div class="menu-wrapper" >
-    <header id="page-topbar" style="background-color: rgb(29, 26, 26)" >
+    <header id="page-topbar" style="background-color: black" >
         <div class="layout-width">
             <div class="navbar-header" id="navbar-header">
                 <div class="d-flex" id="header-logo">
                     <!-- LOGO -->
                     <div class="navbar-brand-box horizontal-logo">
                         <a href="{{route('root')}}" class="logo logo-light">
-                            <span class="logo-sm">
-                                <img src="https://img.themesbrand.com/judia/logo-sm.png" alt="SYPHUS" height="22">
+                            <span class="logo-sm ">
+                                <img src="https://img.themesbrand.com/judia/logo-sm.png" alt="SYPHUS"  height="22" width="22">
                             </span>
-                            <span class="logo-lg">
-                                
-                                <h2 class="text-white mt-3">SYPHUS</h2>
-                            </span>
+                           <!-- HTML -->
+<span class="logo-lg">
+    <img src="{{ URL::asset('images/syphus.jpeg') }}" alt="Syphus Logo" class="responsive-img logo-app" >
+    <!-- <h2 class="text-white mt-3">SYPHUS</h2> -->
+</span>
                         </a>
                     </div>
 

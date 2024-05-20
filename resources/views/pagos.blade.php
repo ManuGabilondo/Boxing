@@ -65,7 +65,7 @@
 <form action="{{ route('subscripcion.update', auth()->user()->id) }}" method="POST">
     @csrf
     @method('PUT')
-    <input type="submit" value="Make a Payment">
+    <input type="submit" value="Realizar Pago">
 </form>			                        </div>
 			                    </div>
 			                </div>
