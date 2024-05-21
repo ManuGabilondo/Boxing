@@ -71,6 +71,99 @@
         @endif
         <a href="{{ route('citas.create') }}" class="btn btn-primary">Pedir una nueva cita</a>
     </div>
+
+     <section id="team" class="team py-5">
+    <div class="container" data-aos="fade-up">
+        <header class="section-header text-center mb-5">
+            <h2>Nuestros Especialistas</h2>
+            <p>Nuestro personal especializado,cada vez que pidas una cita uno de ellos se te asignará automáticamente para ponerse en contacto contigo cuando corresponda</p>
+        </header>
+
+        <div class="row gy-4">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="card text-center">
+                    <div class="card-body">
+                     
+                        <h4 class="card-title">Walter White</h4>
+                        <span class="text-muted">Boxeador Profesional</span>
+                           <div class="m-3">
+                            <i class="fas fa-user fa-5x text-black"></i>
+                        </div>
+                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="card text-center">
+                    <div class="card-body">
+                     
+                        <h4 class="card-title">Sarah Johnson</h4>
+                        <span class="text-muted">Graduada de Fisioterapia</span>
+                           <div class="m-3">
+                            <i class="fas fa-user fa-5x text-primary"></i>
+                        </div>
+                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="card text-center">
+                    <div class="card-body">
+                     
+                        <h4 class="card-title">William Anderson</h4>
+                        <span class="text-muted">Experto en Artes Marciales</span>
+                           <div class="m-3">
+                            <i class="fas fa-user fa-5x text-success"></i>
+                        </div>
+                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                <div class="card text-center">
+                    <div class="card-body">
+                        
+                        <h4 class="card-title">Amanda Jepson</h4>
+                        <span class="text-muted">Boxeadora </span>
+                        <div class="m-3">
+                            <i class="fas fa-user fa-5x text-info"></i>
+                        </div>
+                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 @endsection
 @section('scripts')
 <!-- App js -->

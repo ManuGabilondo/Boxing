@@ -9,11 +9,18 @@
 <h2 class="text-center m-auto">Recetas para mantenimiento y energía</h2>
 
 <br><hr>
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center mt-5">
     <div class="text-center">
         <h1 class="display-4">COMING SOON<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span></h1>
     </div>
+    <br>
+    <hr>
 </div>
+<div class="text-center mt-4">
+    <h5>Esperamos con ansías poder ofrecerte las mejores recetas para mantenimiento y energía. ¡Vuelve pronto!
+    </h5>
+</div>
+    
 @endsection
 @section('scripts')
 <!-- App js -->
