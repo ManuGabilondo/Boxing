@@ -24,7 +24,7 @@
 							<div class="row">
 								<div class="col-md-12 red-bg">
 									<p class="bill-date" id="total-label">Precio Total</p>
-									<h2 class="bill-head" id="total">$ 7.99</h2>
+									<h2 class="bill-head" id="total"> 7.99€</h2>
 									<small class="bill-date" id="total-label">Iva Incluído</small>
 								</div>
 							</div>
@@ -68,6 +68,7 @@
     <input type="submit" value="Realizar Pago">
 </form>			                        </div>
 			                    </div>
+								Al realizar el pago aceptas el trato de los datos proporcionados para el cobro de dicho pago a cambio de los servicios que prometemos
 			                </div>
 						</div>
 					</div>

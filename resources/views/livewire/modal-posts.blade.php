@@ -1,9 +1,9 @@
 <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-dark text-white">
         <h5 class="modal-title" id="postModalLabel">Nuevo Post</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -12,17 +12,20 @@
           @csrf
           <div class="form-group">
             <label for="titulo">Título</label>
-            <input class="form-control" id="titulo" name="titulo" rows="3">
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
           </div>
           <div class="form-group">
             <label for="text">Texto</label>
-            <textarea class="form-control" id="text" name="text" rows="3"></textarea>
+            <textarea class="form-control" id="text" name="text" rows="4" required></textarea>
           </div>
           <div class="form-group">
             <label for="foto">Foto</label>
             <input type="file" class="form-control-file" id="foto" name="foto">
           </div>
-          <button type="submit" class="btn btn-danger">Guardar cambios</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary bg-danger" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary bg-black">Guardar cambios</button>
+          </div>
         </form>
       </div>
     </div>

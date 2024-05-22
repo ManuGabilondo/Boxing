@@ -16,63 +16,83 @@ class UserController extends Controller
         return view('auth.register');
     }
     public function create(Request $request)
-{
-    // Validar los datos de entrada
-    $validatedData = $request->validate([
-        'name' => 'required|string|min:4|max:20',
-        'email' => 'required|email|unique:users,email|max:255',
-        'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'password' => 'required|string|min:6|max:20',
-    ]);
-
-    try {
+    {
+        // Validar los datos de entrada
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:4|max:20',
+            'email' => 'required|email|unique:users,email|max:255',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'password' => 'required|string|min:6|max:20',
+        ]);
     
+        try {
+            // Procesar el avatar si se proporciona
+            if ($request->hasFile('avatar')) {
+                $file = $request->file('avatar');
+                $filename = $file->getClientOriginalName();
+                $validatedData['avatar'] = $file->storeAs('images', $filename, 'public');
+            } else {
+                // Establecer el avatar predeterminado si no se proporciona
+                $validatedData['avatar'] = 'images/default.jpg';
+            }
+    
+            // Crear el usuario
+            $user = new User;
+            $user->name = $validatedData['name'];
+            $user->email = $validatedData['email'];
+            $user->avatar = $validatedData['avatar'];
+            $user->password = Hash::make($request->password);
+    
+            $user->save();
+    
+            return redirect()->route('login')->with('success', 'Usuario creado con éxito');
+        } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Database\QueryException) {
+                $errorCode = $e->errorInfo[1];
+                if ($errorCode == 1062) {
+                    return redirect()->back()->withErrors(['email' => 'El email ya está registrado.']);
+                }
+            }
+    
+            // Error general
+            return redirect()->back()->withErrors(['general' => 'Ocurrió un error al crear el usuario.']);
+        }
+    }
+    
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|min:4|max:20',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => 'required|string|min:6|max:20',
+        ]);
+    
+        // Procesar el avatar si se proporciona
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $filename = $file->getClientOriginalName();
-            $validatedData['avatar'] = $file->storeAs('images', $filename, 'public');
+            $avatar = $file->storeAs('images', $filename, 'public');
+        } else {
+            // Establecer el avatar predeterminado si no se proporciona
+            $avatar = 'images/default.jpg';
         }
-
+    
         // Crear el usuario
-        $user = new User;
-        $user->name = $validatedData['name'];
-        $user->email = $validatedData['email'];
-        $user->avatar = $validatedData['avatar'] ?? null;
-        $user->password = Hash::make($request->password);
-
-        $user->save();
-
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'avatar' => $avatar,
+            'password' => Hash::make($request->password),
+        ]);
+    
         return redirect()->route('login')->with('success', 'Usuario creado con éxito');
-    } catch (\Exception $e) {
-  
-        if ($e instanceof \Illuminate\Database\QueryException) {
-            $errorCode = $e->errorInfo[1];
-
-            if ($errorCode == 1062) { 
-                return redirect()->back()->withErrors(['email' => 'El email ya está registrado.']);
-            }
-        }
-
-        // Error general
-        return redirect()->back()->withErrors(['general' => 'Ocurrió un error al crear el usuario.']);
     }
-}
     public function table()
     {
         return view('usuarios');
     }
 
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|string|min:4|max:20',
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'email' => 'required|email|unique:users|max:20',
-            'password' => 'required|min:6|max:20',
-        ]);
-
-        User::create($request->all());
-    }
     public function rutinas()
     {
         $userId = auth()->id();

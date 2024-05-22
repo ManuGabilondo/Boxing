@@ -138,7 +138,7 @@
                     <div class="dropdown topbar-head-dropdown ms-2 header-item">
                         <button type="button" class="btn btn-icon rounded-circle" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="img-fluid rounded">                        </button>
+                            <img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="avatar">                        </button>
                         <div class="dropdown-menu p-2 dropdown-menu-end">
                             <div class="d-flex gap-2 mb-3 topbar-profile">
                                 <div>

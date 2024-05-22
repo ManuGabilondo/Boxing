@@ -79,87 +79,86 @@
             <p>Nuestro personal especializado,cada vez que pidas una cita uno de ellos se te asignará automáticamente para ponerse en contacto contigo cuando corresponda</p>
         </header>
 
-        <div class="row gy-4">
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                <div class="card text-center">
-                    <div class="card-body">
-                     
-                        <h4 class="card-title">Walter White</h4>
-                        <span class="text-muted">Boxeador Profesional</span>
-                           <div class="m-3">
-                            <i class="fas fa-user fa-5x text-black"></i>
-                        </div>
-                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
-                        <div>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
-                        </div>
+      
+<div class="container my-4">
+    <div class="row gy-4">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Walter White</h4>
+                    <span class="text-muted">Boxeador Profesional</span>
+                    <div class="m-3">
+                        <img src="{{ URL::asset('images/chico.jpg') }}" alt="Walter White" class="img-fluid" style="height: 10rem; object-fit: cover; width: 100%;">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="card text-center">
-                    <div class="card-body">
-                     
-                        <h4 class="card-title">Sarah Johnson</h4>
-                        <span class="text-muted">Graduada de Fisioterapia</span>
-                           <div class="m-3">
-                            <i class="fas fa-user fa-5x text-primary"></i>
-                        </div>
-                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
-                        <div>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                <div class="card text-center">
-                    <div class="card-body">
-                     
-                        <h4 class="card-title">William Anderson</h4>
-                        <span class="text-muted">Experto en Artes Marciales</span>
-                           <div class="m-3">
-                            <i class="fas fa-user fa-5x text-success"></i>
-                        </div>
-                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
-                        <div>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                <div class="card text-center">
-                    <div class="card-body">
-                        
-                        <h4 class="card-title">Amanda Jepson</h4>
-                        <span class="text-muted">Boxeadora </span>
-                        <div class="m-3">
-                            <i class="fas fa-user fa-5x text-info"></i>
-                        </div>
-                        <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
-                        <div>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
-                        </div>
+                    <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                    <div>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Sarah Johnson</h4>
+                    <span class="text-muted">Graduada de Fisioterapia</span>
+                    <div class="m-3">
+                        <img src="{{ URL::asset('images/fisio.jpg') }}" alt="Sarah Johnson" class="img-fluid" style="height: 10rem; object-fit: cover; width: 100%;">
+                    </div>
+                    <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                    <div>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Dylan Leoón</h4>
+                    <span class="text-muted">Experto en Artes Marciales</span>
+                    <div class="m-3">
+                        <img src="{{ URL::asset('images/marcial.jpg') }}" alt="William Anderson" class="img-fluid" style="height: 10rem; object-fit: cover; width: 100%;">
+                    </div>
+                    <p class="card-text mt-3">Te ayudará en todo tipo de problemas que puedas tener sobre tu movilidad o dolores corporales</p>
+                    <div>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Amanda Jepson</h4>
+                    <span class="text-muted">Boxeadora</span>
+                    <div class="m-3">
+                        <img src="{{ URL::asset('images/chica.jpg') }}" alt="Amanda Jepson" class="img-fluid" style="height: 10rem; object-fit: cover; width: 100%;">
+                    </div>
+                    <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, aliquid!</p>
+                    <div>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     </div>
 </section>

@@ -41,7 +41,7 @@
 
 
  @include('layouts.topbar')
-    <div class="main-content fondo">
+    <div class=" fondo">
         <div class="page-content">
             <div class="container-fluid">
 

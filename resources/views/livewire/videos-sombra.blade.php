@@ -2,7 +2,7 @@
     <div class="container">
     
     <div class="row">
-        <!-- Primera línea de videos -->
+      <p>  Al ser un cliente premium tienes desbloqueados los videos sobre entrenamiento de sombra,pero aún no tenemos subidos,serás el primero en enterarte en la próxima actualización.</p>
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
