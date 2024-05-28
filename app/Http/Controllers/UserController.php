@@ -74,7 +74,6 @@ class UserController extends Controller
             $filename = $file->getClientOriginalName();
             $avatar = $file->storeAs('images', $filename, 'public');
         } else {
-            // Establecer el avatar predeterminado si no se proporciona
             $avatar = 'images/default.jpg';
         }
     

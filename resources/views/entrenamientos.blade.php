@@ -6,40 +6,38 @@
     <section class="introduccion mt-4 py-5">
         @php
         $rutinas = \App\Models\Rutina::with('user')->get();
-    @endphp
-    @if($rutinas->isEmpty())
+        @endphp
+        @if($rutinas->isEmpty())
             <h2 class="text-center">No tienes rutinas personalizadas por ahora</h2>
         @else
-    @foreach($rutinas as $rutina)
-    <div class="card w-75 mx-auto mb-4 shadow-sm">
-    @if($rutina->user)
-        <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
-            <span>{{ $rutina->user->name }} - {{ $rutina->titulo}}</span>
-            <small class="text-light">{{ $rutina->created_at->format('d/m/Y') }}</small>
-        </div>
-    @endif
-    <div class="card-body">
-        <p class="card-text">{{ $rutina->descripcion }}</p>
-        @if($rutina->imagen)
-            <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Imagen de entrenamiento" class="img-fluid rounded mb-3">
+            @foreach($rutinas as $rutina)
+                <div class="card w-75 mx-auto mb-4 shadow-sm">
+                    @if($rutina->user)
+                        <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
+                            <span>{{ $rutina->user->name }} - {{ $rutina->titulo}}</span>
+                            <small class="text-light">{{ $rutina->created_at->format('d/m/Y') }}</small>
+                        </div>
+                    @endif
+                    <div class="card-body">
+                        <p class="card-text">{{ $rutina->descripcion }}</p>
+                        @if($rutina->imagen)
+                            <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Imagen de entrenamiento" class="img-fluid rounded mb-3">
+                        @endif
+                        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
+                            Editar
+                        </button>
+                    </div>
+                    <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <div class="text-muted text-right">
+                            <button type="submit" class="delete-button">X</button>
+                        </div>
+                    </form>
+                </div>
+                @livewire('editar-rutina', ['rutina' => $rutina])
+            @endforeach
         @endif
-        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
-            Editar
-        </button>
-    </div>
-    <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <div class=" text-muted text-right">
-                        <button type="submit" class="delete-button">X</button>
-                            </div>
-                        </form>
-</div>
-                
-       
-        @livewire('editar-rutina', ['rutina' => $rutina])
-    @endforeach
-    @endif
     </section>
     <center>
         <div class="card w-75" data-toggle="modal" data-target="#crearPlanModal">
@@ -52,43 +50,91 @@
 
     <!-- Modal -->
     <div class="modal fade" id="crearPlanModal" tabindex="-1" role="dialog" aria-labelledby="crearPlanModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="crearPlanModalLabel">Crear Plan de Rutina Personalizado</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
- <form action="{{ route('entrenamientos.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group">
-            <label for="titulo">Título</label>
-            <input class="form-control" id="titulo" name="titulo" rows="3"></input>
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="custom-modal">
+                    <div class="modal-left">
+                        <div class="text-center">
+                            <i class="fas fa-dumbbell fa-5x"></i>
+                            <h4 class="mt-3 white">Planea tus actividades y controla tus progresos online</h4>
+                        </div>
+                    </div>
+                    <div class="modal-right">
+                        <h5 class="modal-title" id="crearPlanModalLabel">Crear Plan de Rutina Personalizado</h5>
+                        <form action="{{ route('entrenamientos.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label">Título</label>
+                                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imagen" class="form-label">Imagen</label>
+                                <input type="file" class="form-control-file" id="imagen" name="imagen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dias" class="form-label">Días a la semana</label>
+                                <input type="number" class="form-control" id="dias" name="dias" placeholder="Cuantos días a la semana sigues esta rutina">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Nueva rutina</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="descripcion">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="imagen">Imagen</label>
-            <input type="file" class="form-control-file" id="imagen" name="imagen">
-        </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="submit" class="btn btn-primary">Nueva rutina</button>      </div>
     </div>
-    </form>      </div>
-      
-  </div>
-</div>
 @endsection
 
- @section('scripts')
-<!-- App js -->
+@section('scripts')
 <script src="{{ URL::asset('build/js/app.js') }}"></script>
-{{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-@endsection 
+@endsection
+
+@section('styles')
+<style>
+    .custom-modal {
+        display: flex;
+    }
+    .modal-left {
+        background-color: #76C7C0;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 20px;
+    }
+    .modal-left img {
+        max-width: 100px;
+    }
+    .modal-right {
+        padding: 40px;
+        flex: 1;
+        background-color: #23395B;
+        color: white;
+    }
+    .modal-right .form-control, .modal-right .form-control-file {
+        background-color: #23395B;
+        color: white;
+        border: 1px solid #fff;
+    }
+    .modal-right .form-control::placeholder {
+        color: #ccc;
+    }
+    .modal-right .btn-primary {
+        background-color: #76C7C0;
+        border: none;
+    }
+    .custom-checkbox .form-check-input {
+        background-color: #23395B;
+        border: 1px solid #fff;
+    }
+</style>
+@endsection

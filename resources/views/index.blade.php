@@ -33,7 +33,7 @@
             bottom: 5%;
             left: 2%;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional: To make the text more readable */
+            background-color: rgba(0, 0, 0, 0.5); 
             padding: 10px;
             border-radius: 5px;
         }

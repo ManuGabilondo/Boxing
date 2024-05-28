@@ -22,7 +22,8 @@
 <div class="container my-5 d-flex justify-content-center">
     <div class="card text-center shadow" style="width: 18rem;">
         <div class="card-header bg-dark text-white">
-            <h3 class="card-title">Plan Premium</h3>
+            <h3 class="card-title">
+                Tu Plan Premium</h3>
             <p class="card-text">$7.99/mes</p>
         </div>
         <div class="card-body">

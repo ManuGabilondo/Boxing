@@ -56,7 +56,7 @@
                         <li>Acceso a videos</li>
                         <li >Citas ilimitadas</li>
                     </ul>
-                    @if(auth()->user()->premium == 1)
+                    @if(auth()->user()->premium == 0)
                     <div class="btn-wrap">
                         <a href="{{route('subscripcion')}}" class="btn btn-buy">Pasarse Ahora</a>
                     </div>

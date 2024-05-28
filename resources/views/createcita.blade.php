@@ -37,7 +37,7 @@ Citas del usuario
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="phone">Teléfono</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Numero de teléfono">
+                        <input type="number" class="form-control" maxlength="11" id="phone" placeholder="Número de teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" inputmode="numeric">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="company">Urgencia</label>
@@ -69,8 +69,6 @@ Citas del usuario
 
 <!-- jQuery -->
 {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
-
-<!-- jQuery UI -->
 <script src="{{ URL::asset('js/jquery-ui/jquery-ui.min.js') }}"></script>
 
 <script>

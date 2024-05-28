@@ -41,15 +41,15 @@
 			                        <br>
 			                    </div>
 			                    <label class="pay">Nombre en la tarjeta</label>
-			                    <input type="text" name="holdername" placeholder="John Smith">
+			                    <input required type="text" name="holdername" placeholder="John Smith">
 			                    <div class="row">
 			                        <div class="col-8 col-md-6">
 			                            <label class="pay">Número de la tarjeta</label>
-			                            <input type="text" name="cardno" id="cr_no" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
+			                            <input required type="number" name="cardno" id="cr_no" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
 			                        </div>
 			                        <div class="col-4 col-md-6">
 			                            <label class="pay">CVV</label>
-			                            <input type="password" name="cvcpwd" placeholder="&#9679;&#9679;&#9679;" class="placeicon" minlength="3" maxlength="3">
+			                            <input required type="password" name="cvcpwd" placeholder="&#9679;&#9679;&#9679;" class="placeicon" minlength="3" maxlength="3">
 			                        </div>
 			                    </div>
 			                    <div class="row">
@@ -57,16 +57,16 @@
 			                            <label class="pay">Fecha de caducidad</label>
 			                        </div>
 			                        <div class="col-md-12">
-			                            <input type="text" name="exp" id="exp" placeholder="MM/AA" minlength="5" maxlength="5">
+			                            <input required type="text" name="exp" id="exp" placeholder="MM/AA" minlength="5" maxlength="5">
 			                        </div>
 			                    </div>
 			                    <div class="row">
 			                        <div class="col-md-6">
-<form action="{{ route('subscripcion.update', auth()->user()->id) }}" method="POST">
-    @csrf
-    @method('PUT')
-    <input type="submit" value="Realizar Pago">
-</form>			                        </div>
+												<form action="{{ route('subscripcion.update', auth()->user()->id) }}" method="POST">
+													@csrf
+													@method('PUT')
+													<input type="submit" value="Realizar Pago">
+												</form>			                        </div>
 			                    </div>
 								Al realizar el pago aceptas el trato de los datos proporcionados para el cobro de dicho pago a cambio de los servicios que prometemos
 			                </div>

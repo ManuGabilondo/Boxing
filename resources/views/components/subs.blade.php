@@ -73,7 +73,7 @@
                 </div>
                 <div class="card-subscription-body">
                     <ul class="list-unstyled">
-                        <li><strong>Ruitnas</strong> ilimitadas</li>
+                        <li><strong>Rutinas</strong> ilimitadas</li>
                         <li><strong>100GB</strong> Almacenamiento</li>
                         <li><strong>Acceso</strong> a todas las funciones</li>
                         <li><strong>Soporte</strong> prioritario</li>
