@@ -149,7 +149,7 @@
             <div class="modal-dialog">
                 <div class="card modal-content">
                     <div class="card-header">
-                        <h5 class="modal-title" id="receta5Label">Brunch de tostadas</h5>
+                        <h5 class="modal-title" id="receta5Label">Hamburguesa con patatas fritas a la Americana</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="card-body">

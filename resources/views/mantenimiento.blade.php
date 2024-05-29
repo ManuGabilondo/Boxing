@@ -11,7 +11,7 @@
 <br><hr>
 <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="text-center">
-        <h1 class="display-4">COMING SOON<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span></h1>
+        <h1 class="display-4">ESTAREMOS CONTIGO PRONTO<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span></h1>
     </div>
     <br>
     <hr>

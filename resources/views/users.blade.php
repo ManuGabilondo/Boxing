@@ -21,6 +21,31 @@
         <div id="calendar"></div>
     </div>
 </div>
+<!-- Modal de Confirmación de Eliminación -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #FF0000;">
+                <h5 class="modal-title text-white" id="deleteModalLabel"><i class="fas fa-trash-alt mr-2"></i>Confirmar Eliminación</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que quieres dar de baja este usuario?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-black white" data-dismiss="modal">Cancelar</button>
+                <form id="deleteForm" action="" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 @section('scripts')
 <!-- App js -->
@@ -95,6 +120,12 @@ $(document).ready(function() {
         defaultView: 'month'
     });
 });
+function showDeleteModal(button) {
+        var userId = button.getAttribute('data-id');
+        var form = document.getElementById('deleteForm');
+        form.action = '/users/' + userId; // Cambia la ruta según sea necesario
+        $('#deleteModal').modal('show');
+    }
 </script>
 @endsection
 @section('styles')

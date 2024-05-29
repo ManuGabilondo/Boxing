@@ -50,7 +50,7 @@ class UserController extends Controller
             if ($e instanceof \Illuminate\Database\QueryException) {
                 $errorCode = $e->errorInfo[1];
                 if ($errorCode == 1062) {
-                    return redirect()->back()->withErrors(['email' => 'El email ya está registrado.']);
+                    return redirect()->back()->withErrors(['email' => 'Email registrado,por favor ingrese otro o inicie sesión.']);
                 }
             }
     
@@ -105,18 +105,12 @@ class UserController extends Controller
     public function data()
     {
         return DataTables::of(User::query())
-            ->addColumn('actions', function ($user) {
-                return '<a href="' . route('users.edit', $user->id) . '" class="badge badge-secondary">Editar Usuario</a> ' 
-                // .
-                //     '<form class="badge badge-danger" action="' . route('users.delete', $user->id) . '" method="POST" style="display:inline;">
-                //     ' . csrf_field() . '
-                //     ' . method_field('DELETE') . '
-                //     <button type="submit" class="badge badge-danger" style="border:none; background:none;">Delete</button>
-                // </form>'
-                ;
-            })
-            ->rawColumns(['actions'])
-            ->make(true);
+        ->addColumn('actions', function ($user) {
+            return '<a href="' . route('users.edit', $user->id) . '" class="badge bg-black white">Editar</a> ' 
+            . '<button type="button" class="badge badge-danger" data-id="' . $user->id . '" onclick="showDeleteModal(this)">Dar de baja</button>';
+        })
+        ->rawColumns(['actions'])
+        ->make(true);
     }
     public function delete($id)
     {
