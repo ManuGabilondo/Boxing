@@ -21,21 +21,51 @@
                     <div class="card-body">
                         <p class="card-text">{{ $rutina->descripcion }}</p>
                         @if($rutina->imagen)
-                            <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Imagen de entrenamiento" class="img-fluid rounded mb-3">
+                            <img src="{{ asset('storage/' . $rutina->imagen) }}" alt="Imagen de entrenamiento" class="img-fluid rounded mb-3" style="max-width: 100%; max-height: 300px;">
                         @endif
-                        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
+                        <br>
+                        <button type="button" class="btn bg-black white btn-sm" data-toggle="modal" data-target="#editRutinaModal{{ $rutina->id }}">
                             Editar
                         </button>
+                        <button type="button" class=" delete-button btn-sm" data-toggle="modal" data-target="#deleteRutinaModal{{ $rutina->id }}">
+                            X
+                        </button>
                     </div>
-                    <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <div class="text-muted text-right">
-                            <button type="submit" class="delete-button">X</button>
-                        </div>
-                    </form>
                 </div>
                 @livewire('editar-rutina', ['rutina' => $rutina])
+
+                <!-- Modal de Confirmación de Eliminación -->
+               <!-- Modal de Confirmación de Eliminación -->
+               <div class="modal fade" id="deleteRutinaModal{{ $rutina->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteRutinaModalLabel{{ $rutina->id }}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <div class="d-flex align-items-center justify-content-center w-100">
+                    <div class="col-2 text-center">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                    </div>
+                    <h5 class="modal-title col-10 text-left" id="deleteRutinaModalLabel{{ $rutina->id }}">Confirmar Eliminación</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <p class="lead">¿Estás seguro de que quieres eliminar esta rutina?</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <form action="{{ route('rutinas.destroy', $rutina->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn bg-black white">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             @endforeach
         @endif
     </section>

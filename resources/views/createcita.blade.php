@@ -49,7 +49,7 @@ Citas del usuario
                     <textarea class="form-control" id="message" rows="4" placeholder="Descripción a tener en cuenta por nuestros especialistas"></textarea>
                 </div>
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn bg-black white">Guardar +</button>
             </form>
         </div>
         <div class="col-md-6 contact-info">

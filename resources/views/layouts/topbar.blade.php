@@ -138,7 +138,7 @@
                     <div class="dropdown topbar-head-dropdown ms-2 header-item">
                         <button type="button" class="btn btn-icon rounded-circle" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="avatar">                        </button>
+                            <img src="{{ asset('storage/' . @Auth::user()->avatar) }}" alt="avatar" class="avatar" alt="avatar">                        </button>
                         <div class="dropdown-menu p-2 dropdown-menu-end">
                             <div class="d-flex gap-2 mb-3 topbar-profile">
                                 <div>
@@ -170,37 +170,3 @@
 
   
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtén los botones de cambio de tema
-    const lightModeButton = document.querySelector('[data-mode="light"]');
-    const darkModeButton = document.querySelector('[data-mode="dark"]');
-
-    // Función para cambiar el tema
-    function changeTheme(theme) {
-        // Cambia el tema en el CSS (aquí necesitas implementar tu lógica para cambiar el tema)
-        // Por ejemplo, cambiar la clase del body o modificar variables CSS
-        document.body.classList.remove('dark-theme', 'light-theme');
-        document.body.classList.add(theme);
-
-        // Almacena la preferencia en LocalStorage
-        localStorage.setItem('theme', theme);
-    }
-
-    // Event listener para el botón de modo claro
-    lightModeButton.addEventListener('click', function() {
-        changeTheme('light-theme');
-    });
-
-    // Event listener para el botón de modo oscuro
-    darkModeButton.addEventListener('click', function() {
-        changeTheme('dark-theme');
-    });
-
-    // Carga el tema guardado en LocalStorage al cargar la página
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        changeTheme(savedTheme);
-    }
-});
-</script>

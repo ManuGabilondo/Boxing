@@ -18,7 +18,7 @@
 									<small class="bill-date">{{ now()->format('Y M d \a\t H:i A') }}</small>
 								</div>
 								<div class="col-lg-5 col-4 mt-4">
-									<h2 class="bill-head px-xl-5 px-lg-4">SI</h2>
+									<h2 class="bill-head px-xl-5 px-lg-4">S I</h2>
 								</div>
 							</div>
 							<div class="row">
@@ -45,7 +45,7 @@
 			                    <div class="row">
 			                        <div class="col-8 col-md-6">
 			                            <label class="pay">Número de la tarjeta</label>
-			                            <input required type="number" name="cardno" id="cr_no" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
+			                            <input required type="password" name="cardno" id="cr_no" placeholder="0000-0000-0000-0000" minlength="16" maxlength="16">
 			                        </div>
 			                        <div class="col-4 col-md-6">
 			                            <label class="pay">CVV</label>
@@ -57,7 +57,7 @@
 			                            <label class="pay">Fecha de caducidad</label>
 			                        </div>
 			                        <div class="col-md-12">
-			                            <input required type="text" name="exp" id="exp" placeholder="MM/AA" minlength="5" maxlength="5">
+			                            <input required type="date" name="exp" id="exp" placeholder="MM/AA" minlength="5" maxlength="5">
 			                        </div>
 			                    </div>
 			                    <div class="row">

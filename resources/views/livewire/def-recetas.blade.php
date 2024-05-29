@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-4" >
-            <h3>Ensaladilla rusa vegetariana</h3>
+            <h3>Ensaladilla vegetariana</h3>
             <div class="card dash-card" data-bs-toggle="modal" data-bs-target="#receta3">
                         <img  src='{{ URL::asset('images/dietas/ensaladilla.jpg') }}'  class="img-responsive img-fluid">
               

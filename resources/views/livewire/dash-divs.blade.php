@@ -47,7 +47,7 @@
                 <div class="card dash-card h-100">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title">Sombra</h2>
-                        <p class="card-text flex-grow-1">Videos, ejemplos y movimientos para realización de entrenamiento de sombra</p>
+                        <p class="card-text flex-grow-1">Vídeos, ejemplos y movimientos para realización de entrenamiento de sombra</p>
                         <div class="d-flex justify-content-end">
                             <i class="fas fa-user-ninja"></i>
                         </div>

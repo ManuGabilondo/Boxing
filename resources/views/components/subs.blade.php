@@ -56,7 +56,7 @@
                 <div class="card-subscription-body">
                     <ul class="list-unstyled">
                         <li><strong>1</strong> Proyecto</li>
-                        <li><strong>5MB</strong> Almacenamiento</li>
+                        <li><strong>2 citas</strong>  Máximo al mes</li>
                         <li><strong>Acceso</strong> a funciones básicas</li>
                         <li><strong>Soporte</strong> limitado</li>
                     </ul>
@@ -74,7 +74,7 @@
                 <div class="card-subscription-body">
                     <ul class="list-unstyled">
                         <li><strong>Rutinas</strong> ilimitadas</li>
-                        <li><strong>100GB</strong> Almacenamiento</li>
+                        <li><strong>Sin Máximo </strong> de citas</li>
                         <li><strong>Acceso</strong> a todas las funciones</li>
                         <li><strong>Soporte</strong> prioritario</li>
                         <li><strong>Actualizaciones</strong> regulares</li>

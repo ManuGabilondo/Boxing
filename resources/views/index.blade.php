@@ -17,6 +17,41 @@
 @section('scripts')
 <!-- App js -->
 <script src="{{ URL::asset('build/js/app.js') }}"></script>
+
+
+<script>function validateAndSendEmail() {
+  var nombre =document.getElementById("nombre").value;
+    var email = document.getElementById("email").value;
+    var telefono = document.getElementById("telefono").value;
+    var mensaje = document.getElementById("mensaje").value;
+
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+    if (!emailPattern.test(email)) {
+        iziToast.error({
+            title: 'Error',
+            message: 'Por favor, introduce una dirección de correo válida.',
+            position: 'topRight'
+        });
+        return false;
+    }
+
+    if (telefono.trim() === "" || mensaje.trim() === "") {
+        iziToast.error({
+            title: 'Error',
+            message: 'Todos los campos son obligatorios.',
+            position: 'topRight'
+        });
+        return false;
+    }
+
+    var mailtoLink = `mailto:mngabilondo@gmail.com?subject=Contacto de Cliente Syphus&body=Nombre: ${nombre}%0D%0AEmail: ${email}%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+
+    window.location.href = mailtoLink;
+
+    return false;
+}
+</script>
+
 @endsection
 @section('styles')
 <!-- App css -->

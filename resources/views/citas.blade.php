@@ -10,7 +10,6 @@
     @endif
 
     <div class="row">
-        <!-- Calendario de Citas -->
         <div class="col-lg-4 mb-4">
             <div class="card shadow-sm">
                 <div class="card-header bg-black text-white">
@@ -39,7 +38,7 @@
                             <p class="card-text text-center">Profesional en cargo: <strong>Dylan Leon</strong></p>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <a href="{{ route('citas.edit', $cita->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{{ route('citas.edit', $cita->id) }}" class="btn bg-black white btn-sm">Editar</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
                                     Eliminar
                                 </button>
