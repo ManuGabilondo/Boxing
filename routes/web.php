@@ -46,7 +46,7 @@ Route::post('/muro/store', [PostController::class, 'store'])->name('posts.store'
 
 Route::delete('/muro/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::get('/reservas', [ReservasController::class, 'home'])->name( 'reservas');
+// Route::get('/reserves', [ReservasController::class, 'home'])->name( 'reserves');
 
 Route::get('/reservas/create', [ReservasController::class, 'create'])->name('reservas.create');
 
@@ -68,6 +68,10 @@ Route::post('/contacto', [ContactFormMailable::class, 'enviar'])->name('contacto
 Route::get('subscripcion', function () {
     return view('subscripcion');
 })->name('subscripcion');
+
+Route::get('reservas', function () {
+    return view('reservas');
+})->name('reservas');
 //RUTAS DE VISTAS
 
 

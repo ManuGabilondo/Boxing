@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cita;
+use App\Models\Reserva;
 use Carbon\Carbon;
 use App\Models\User;
 
@@ -12,13 +13,13 @@ class ReservasController extends Controller
 
     public function home()
     {
-        dd('hola');
+        // dd('hola');
         return view('reservas');
     }
     public function create()
     {
-        $reservas = \App\Models\Cita::all();
-        return view('createcita', compact('reservas'));
+        $reservas = \App\Models\Reserva::all();
+        return view('createreservas', compact('reservas'));
     }
     public function store(Request $request)
     {
@@ -44,7 +45,7 @@ class ReservasController extends Controller
         }
 
         // Verificamos la cantidad total de personas reservadas para ese día
-        $totalPersonasReservadas = Cita::where('fecha_reserva', $request->fecha_reserva)
+        $totalPersonasReservadas = Reserva::where('fecha_reserva', $request->fecha_reserva)
             ->sum('personas'); // Suma el número de personas de todas las reservas en esa fecha
 
         // Si el total de personas reservadas ya supera 40, no permitimos la nueva reserva
@@ -53,7 +54,7 @@ class ReservasController extends Controller
         }
 
         // Creamos la nueva cita
-        $cita = new Cita;
+        $cita = new Reserva;
         $cita->nombre = $request->nombre;
         $cita->fecha_reserva = $request->fecha_reserva;
         $cita->personas = $request->personas;

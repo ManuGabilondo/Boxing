@@ -9,8 +9,6 @@
 @endsection
 @livewire('carousel')
 @livewire('dash-divs')
-@include('cabezon')
-<hr>
 @livewire('sobre-nosotros')
 @livewire('contacto')
 @livewire('sayings')
