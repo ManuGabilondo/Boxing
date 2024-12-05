@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 @php
-    $citas = \App\Models\Cita::with('user')->get(['user_id','asunto' ,'fecha_cita']);
+    $reservas = \App\Models\Cita::with('user')->get(['user_id','asunto' ,'fecha_reserva']);
 @endphp
 @section('page-title')
 
@@ -98,17 +98,17 @@ $(document).ready(function() {
             { data: 'actions', name: 'acciones', orderable: false, searchable: false }
         ],
         initComplete: function(settings, json) {
-            this.api().columns.adjust(); 
+            this.api().columns.adjust();
         }
     });
 
     $('#calendar').fullCalendar({
         locale: 'es',
         events: [
-            @foreach($citas as $cita)
+            @foreach($reservas as $cita)
             {
                 title : '{{ $cita->user->name }} -  {{ $cita->asunto }}',
-                start : '{{ \Carbon\Carbon::parse($cita->fecha_cita)->format('Y-m-d') }}'
+                start : '{{ \Carbon\Carbon::parse($cita->fecha_reserva)->format('Y-m-d') }}'
             },
             @endforeach
         ],

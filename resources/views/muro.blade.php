@@ -19,7 +19,7 @@
         <div class="col-md-10">
             @livewire('divs-publicaciones')
         </div>
-
+<!-- <a href="mantenimiento">cabezin</a> -->
         <div class="col-md-2">
             <ul>
                 <li>Respete a los demás usuarios</li>

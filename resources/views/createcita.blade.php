@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Citas del usuario
+Reservas del usuario
 @endsection
 @section('content')
 @if(session('success'))
@@ -16,22 +16,22 @@ Citas del usuario
         @endforeach
     </div>
 @endif
-<h2>NUEVA CITACIÓN</h2>
+<h2>NUEVA RESERVA</h2>
 
 <div class="container mt-5">
     <div class="row contact-section">
         <div class="col-md-6 contact-form">
             <h4>Reserva una cita</h4>
-            <form action="{{ route('citas.store') }}" method="POST">
+            <form action="{{ route('reservas.store') }}" method="POST">
                    @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                         <label for="asunto">Asunto</label>*
-                    <input type="text" class="form-control" id="asunto" name="asunto" required placeholder="Asunto o título que le quieras dar a tu cita">
+                         <label for="asunto">Nombre</label>*
+                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre de la reserva">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="fecha_cita">Fecha de la cita</label>*
-    <input type="text" id="fecha_cita" name="fecha_cita" autocomplete="nope" required placeholder="Fecha de la cita">
+                        <label for="fecha_reserva">Fecha de la reserva</label>*
+    <input type="text" id="fecha_reserva" class="form-control" name="fecha_reserva" autocomplete="nope" required placeholder="Fecha de la reserva">
                     </div>
                 </div>
                 <div class="form-row">
@@ -40,24 +40,24 @@ Citas del usuario
                         <input type="number" class="form-control" maxlength="11" id="phone" placeholder="Número de teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" inputmode="numeric">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="company">Urgencia</label>
-                        <input type="text" class="form-control" id="company" placeholder="Grado de Urgencia">
+                        <label for="company">Personas</label>
+                        <input type="number" class="form-control" id="personas" name="personas" placeholder="Numero de Personas">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="message">Descripción / Mensaje </label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Descripción a tener en cuenta por nuestros especialistas"></textarea>
+                    <label for="message">Alergias </label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Alergias a tener en cuenta por nuestros especialistas"></textarea>
                 </div>
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                <button type="submit" class="btn bg-black white">Guardar +</button>
+                <button type="submit" class="btn btn-primary white">Guardar +</button>
             </form>
         </div>
-        <div class="col-md-6 contact-info">
+        <div class="col-md-6 contact-info text-dark">
             <h5>Inormación conveniente</h5>
-            <p>Las citas que pidas significan un periodo de tiempo en el cual uno de nuestros profesionales se pondrá en contacto con usted para llevar acabo un monitoreo,al pedir su cita obtendremos su informacion de contacto para solamente ese fin</p>
-            <p><i class="fas fa-map-marker-alt"></i> 37 Carrer de la Virgen de la Purificacion, VLC 46900</p>
-            <p><i class="fas fa-phone"></i> +34 (603) 873 147</p>
-            <p><i class="fas fa-envelope"></i> contacto@syphus.com</p>
+            <p>Las reservas se deben realizar con al menos un día de antelación. Cada usuario puede realizar tantas reservas como desee. Recuerda que el número máximo de personas por cita es 40. ¡Reserva tu lugar con tiempo y asegura tu cita!</p>
+            <p><i class="fas fa-map-marker-alt"></i> C de Sant Domènec Savio, 39, Rascanya, 46019 València, Valencia</p>
+            <p><i class="fas fa-phone"></i> +34 (639) 209 697</p>
+            <p><i class="fas fa-envelope"></i> contacto@Malkebien.com</p>
         </div>
     </div>
 </div>
@@ -73,11 +73,11 @@ Citas del usuario
 
 <script>
 $( function() {
-    $( "#fecha_cita" ).datepicker({
-        changeMonth: true, 
-        changeYear: true, 
-        yearRange: "2024:2025", 
-        dateFormat: "dd-mm-yy" 
+    $( "#fecha_reserva" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "2024:2025",
+        dateFormat: "dd-mm-yy"
     });
 } );
 </script>
@@ -99,8 +99,8 @@ $( function() {
         .contact-info {
             flex: 1;
             padding: 30px;
-            background: #343a40;
-            color: #fff;
+            background:  blue;
+            color: black;
         }
         .contact-info h5, .contact-info p, .contact-info a {
             color: #fff;

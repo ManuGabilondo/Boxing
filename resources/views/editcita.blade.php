@@ -23,7 +23,7 @@ Editar Cita
     <div class="row contact-section">
         <div class="col-md-6 contact-form">
             <h4>Editar una cita</h4>
-            <form action="{{ route('citas.update', $cita->id) }}" method="POST">
+            <form action="{{ route('reservas.update', $cita->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -31,8 +31,8 @@ Editar Cita
                     <input type="text" class="form-control" id="asunto" name="asunto" required value="{{$cita->asunto}}">
                 </div>
                 <div class="form-group">
-                    <label for="fecha_cita">Fecha de la cita</label>
-                    <input type="text" id="fecha_cita" autocomplete="nope" name="fecha_cita" required value="{{$cita->fecha_cita}}">
+                    <label for="fecha_reserva">Fecha de la cita</label>
+                    <input type="text" id="fecha_reserva" autocomplete="nope" name="fecha_reserva" required value="{{$cita->fecha_reserva}}">
                 </div>
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -40,10 +40,10 @@ Editar Cita
         </div>
         <div class="col-md-6 contact-info">
             <h5>Información conveniente</h5>
-            <p>Las citas que pidas significan un periodo de tiempo en el cual uno de nuestros profesionales se pondrá en contacto con usted para llevar acabo un monitoreo,al pedir su cita obtendremos su información de contacto para solamente ese fin</p>
+            <p>Las reservas que pidas significan un periodo de tiempo en el cual uno de nuestros profesionales se pondrá en contacto con usted para llevar acabo un monitoreo,al pedir su cita obtendremos su información de contacto para solamente ese fin</p>
             <p><i class="fas fa-map-marker-alt"></i> 37 Carrer de la Virgen de la Purificacion, VLC 46900</p>
             <p><i class="fas fa-phone"></i> +34 (603) 873 147</p>
-            <p><i class="fas fa-envelope"></i> contacto@syphus.com</p>
+            <p><i class="fas fa-envelope"></i> contacto@Malkebien.com</p>
         </div>
     </div>
 </div>
@@ -61,11 +61,11 @@ Editar Cita
 
 <script>
 $( function() {
-    $( "#fecha_cita" ).datepicker({
-         changeMonth: true, 
-        changeYear: true, 
-        yearRange: "2024:2025", 
-        dateFormat: "dd-mm-yy" 
+    $( "#fecha_reserva" ).datepicker({
+         changeMonth: true,
+        changeYear: true,
+        yearRange: "2024:2025",
+        dateFormat: "dd-mm-yy"
     });
 } );
 </script>

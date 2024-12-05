@@ -33,7 +33,7 @@
             <a href="entrenamientos" class="text-decoration-none w-100">
                 <div class="card dash-card h-100">
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title">Entrenamiento funcional</h2>
+                        <h2 class="card-title">Carta Restaurante</h2>
                         <p class="card-text flex-grow-1">Actividades y ejercicios para fortalecer y ejercitar</p>
                         <div class="d-flex justify-content-end">
                             <i class="fas fa-dumbbell"></i>
@@ -46,7 +46,7 @@
             <a href="sombra" class="text-decoration-none w-100">
                 <div class="card dash-card h-100">
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title">Sombra</h2>
+                        <h2 class="card-title">Carta para llevar</h2>
                         <p class="card-text flex-grow-1">Vídeos, ejemplos y movimientos para realización de entrenamiento de sombra</p>
                         <div class="d-flex justify-content-end">
                             <i class="fas fa-user-ninja"></i>
@@ -59,7 +59,7 @@
             <a href="cardio" class="text-decoration-none w-100">
                 <div class="card dash-card h-100">
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title">Cardio</h2>
+                        <h2 class="card-title">Reserva por telefono</h2>
                         <p class="card-text flex-grow-1">Ideas y ejemplos para tu entrenamiento de cardio saludable!</p>
                         <div class="d-flex justify-content-end">
                             <i class="fas fa-heartbeat"></i>
@@ -72,7 +72,7 @@
             <a href="../dietas" class="text-decoration-none w-100">
                 <div class="card dash-card h-100">
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title">Dietas</h2>
+                        <h2 class="card-title">Reserva por web</h2>
                         <p class="card-text flex-grow-1">Las mejores dietas para un eficaz rendimiento físico</p>
                         <div class="d-flex justify-content-end">
                             <i class="fas fa-carrot"></i>

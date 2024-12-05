@@ -18,8 +18,8 @@ $random = rand(1, 5);
                                 <div class="card card-login mb-0 border-0 shadow-none mb-0">
                                     <div class="card-body p-sm-5">
                                         <div class="text-center">
-                                              <!-- <img src="{{ URL::asset('images/login/05.jpg') }}" alt="SYPHUS" height="100px" class='img-responsive'> -->
-                                              <img src="{{ URL::asset('images/syphus.jpeg') }}" alt="SYPHUS" height="100px" class='img-responsive'>
+                                              <!-- <img src="{{ URL::asset('images/login/05.jpg') }}" alt="Malkebien" height="100px" class='img-responsive'> -->
+                                              <img src="{{ URL::asset('images/malkebien.jpg') }}" alt="Malkebien" height="100px" class='img-responsive'>
                                         </div>
                                         <div class="p-2 ">
                                             <form method="POST" action="{{ route('login') }}">
@@ -40,7 +40,7 @@ $random = rand(1, 5);
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">
-                                                   
+
                                                     <label class="form-label" for="password-input">Contraseña <span
                                                             class="text-danger">*</span></label>
                                                     <div class="position-relative auth-pass-inputgroup mb-3">
@@ -60,17 +60,17 @@ $random = rand(1, 5);
                                                     </div>
                                                 </div>
 
-                                              
+
                                                 <div class="mt-4">
-                                                    <button class="btn btn-danger w-100" type="submit">Entrar</button>
+                                                    <button class="btn btn-info w-100" type="submit">Entrar</button>
                                                 </div>
                                                 <div class="text-center mt-5"> <p class="mb-0">No tienes una cuenta?
                                                     <a href="{{ route('register') }}" class="fw-semibold text-secondary text-decoration-underline">Registrate</a>
-                                                </p> 
+                                                </p>
                                                 </div>
                                             </form>
 
-                                           
+
                                         </div>
                                     </div><!-- end card body -->
                                 </div><!-- end card -->

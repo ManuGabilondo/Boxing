@@ -125,6 +125,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request);
         $user = User::find($id);
         $data = $request->validate([
             'name' => 'required',

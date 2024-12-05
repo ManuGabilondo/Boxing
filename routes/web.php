@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CitasController;
+use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RutinaController;
@@ -46,17 +46,17 @@ Route::post('/muro/store', [PostController::class, 'store'])->name('posts.store'
 
 Route::delete('/muro/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::get('/citas', [CitasController::class, 'index'])->name('citas');
+Route::get('/reservas', [ReservasController::class, 'home'])->name( 'reservas');
 
-Route::get('/citas/create', [CitasController::class, 'create'])->name('citas.create');
+Route::get('/reservas/create', [ReservasController::class, 'create'])->name('reservas.create');
 
-Route::get('/citas/{id}/edit', [CitasController::class, 'edit'])->name('citas.edit');
+Route::get('/reservas/{id}/edit', [ReservasController::class, 'edit'])->name('reservas.edit');
 
-Route::put('/citas/{id}', [CitasController::class, 'update'])->name('citas.update');
+Route::put('/reservas/{id}', [ReservasController::class, 'update'])->name('reservas.update');
 
-Route::post('/citas/store', [CitasController::class, 'store'])->name('citas.store');
+Route::post('/reservas/store', [ReservasController::class, 'store'])->name('reservas.store');
 
-Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.destroy');
+Route::delete('/reservas/{id}', [ReservasController::class, 'destroy'])->name('reservas.destroy');
 
 Route::get('subscripcion/{id}', [UserController::class, 'subscribir'])->name('subscripcion.edit');
 

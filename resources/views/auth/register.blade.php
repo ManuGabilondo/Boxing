@@ -13,7 +13,7 @@ $random = rand(1, 5);
                 <div class="col-lg-10">
                     <div class="card mb-0 p-2">
                         <div class="row g-0">
-                           
+
                             <!--end col-->
                             <div class="col-xxl-6 mx-auto">
                                 <div class="card mb-0 border-0 shadow-none mb-0">
@@ -103,7 +103,7 @@ $random = rand(1, 5);
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <p class="mb-0 fs-sm text-muted fst-italic">Al registrarte a Syphus aceptas nuestras
+                                                    <p class="mb-0 fs-sm text-muted fst-italic">Al registrarte a Malkebien aceptas nuestras
                                                          <a href="pages-term-conditions"
                                                             class="text-primary text-decoration-underline fst-normal fw-medium">Condiciones de uso</a></p>
                                                 </div>
@@ -124,7 +124,7 @@ $random = rand(1, 5);
                                                     <button class="btn button w-100" type="submit">Registrarse</button>
                                                 </div>
 
-                                                
+
                                             </form>
                                         </div>
                                         <div class="mt-4 text-center">

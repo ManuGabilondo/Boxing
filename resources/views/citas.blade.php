@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Citas del usuario
+    Reservas del usuario
 @endsection
 @section('content')
     @if(session('success'))
@@ -13,7 +13,7 @@
         <div class="col-lg-4 mb-4">
             <div class="card shadow-sm">
                 <div class="card-header bg-black text-white">
-                    <h5 class="card-title">Calendario de Citas</h5>
+                    <h5 class="card-title">Calendario de Reservas</h5>
                 </div>
                 <div class="card-body p-0">
                     <div id="calendar"></div>
@@ -21,24 +21,24 @@
             </div>
         </div>
 
-        <!-- Listado de Citas -->
+        <!-- Listado de Reservas -->
         <div class="col-lg-8">
             @php
-                $citas = \App\Models\Cita::where('user_id', Auth::id())->get();
+                $reservas = \App\Models\Cita::where('user_id', Auth::id())->get();
             @endphp
 
-            @if($citas->count())
-                @foreach($citas as $cita)
+            @if($reservas->count())
+                @foreach($reservas as $cita)
                     <div class="card mb-4 shadow-sm">
                         <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
                             <h5 class="card-title">Asunto/Título: <strong>{{ $cita->asunto }}</strong></h5>
                         </div>
                         <div class="card-body">
-                            <p class="card-text text-center font-weight-bold">Fecha de la cita: {{ $cita->fecha_cita }}</p>
+                            <p class="card-text text-center font-weight-bold">Fecha de la cita: {{ $cita->fecha_reserva }}</p>
                             <p class="card-text text-center">Profesional en cargo: <strong>Dylan Leon</strong></p>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <a href="{{ route('citas.edit', $cita->id) }}" class="btn bg-black white btn-sm">Editar</a>
+                                <a href="{{ route('reservas.edit', $cita->id) }}" class="btn bg-black white btn-sm">Editar</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $cita->id }}">
                                     Eliminar
                                 </button>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <form action="{{ route('citas.destroy', $cita->id) }}" method="POST">
+                                    <form action="{{ route('reservas.destroy', $cita->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -73,7 +73,7 @@
             @else
                 <p>No tienes ninguna cita.</p>
             @endif
-            <a href="{{ route('citas.create') }}" class="btn bg-black text-white">Pedir una nueva cita +</a>
+            <a href="{{ route('reservas.create') }}" class="btn bg-black text-white">Pedir una nueva cita +</a>
         </div>
     </div>
 
@@ -179,10 +179,10 @@
         $('#calendar').fullCalendar({
             locale: 'es',
             events: [
-                @foreach($citas as $cita)
+                @foreach($reservas as $cita)
                 {
                     title : '{{ $cita->asunto }}',
-                    start : '{{ \Carbon\Carbon::parse($cita->fecha_cita)->format('Y-m-d') }}'
+                    start : '{{ \Carbon\Carbon::parse($cita->fecha_reserva)->format('Y-m-d') }}'
                 },
                 @endforeach
             ],

@@ -164,7 +164,7 @@ perpassar ligeiras, como ao poeta, não o do trem, mas o do _Fausto: Ahi
 vindes outra vez, inquietas sombras...?_
 
 Fiquei tão alegre com esta ideia, que ainda agora me treme a penna na
-mão. Sim, Nero, Augusto, Massinissa, e tu, grande Cesar, que me incitas
+mão. Sim, Nero, Augusto, Massinissa, e tu, grande Cesar, que me inreservas
 a fazer os meus commentarios, agradeço-vos o conselho, e vou deitar ao
 papel as reminiscencias que me vierem vindo. Deste modo, viverei o que
 vivi, e assentarei a mão para alguma obra de maior tomo. Eia, comecemos

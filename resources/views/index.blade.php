@@ -9,6 +9,7 @@
 @endsection
 @livewire('carousel')
 @livewire('dash-divs')
+@include('cabezon')
 <hr>
 @livewire('sobre-nosotros')
 @livewire('contacto')
@@ -44,7 +45,7 @@
         return false;
     }
 
-    var mailtoLink = `mailto:mngabilondo@gmail.com?subject=Contacto de Cliente Syphus&body=Nombre: ${nombre}%0D%0AEmail: ${email}%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+    var mailtoLink = `mailto:mngabilondo@gmail.com?subject=Contacto de Cliente Malkebien&body=Nombre: ${nombre}%0D%0AEmail: ${email}%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
 
     window.location.href = mailtoLink;
 
@@ -57,7 +58,7 @@
 <!-- App css -->
     <style>
         .header-image {
-            background-image: url('{{ URL::asset('images/login/03.jpg') }}');
+            background-image: url('{{ URL::asset('images/login/03.jpeg') }}');
             height: 25rem;
             background-size: cover;
             background-position: center;
@@ -68,7 +69,7 @@
             bottom: 5%;
             left: 2%;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
         }

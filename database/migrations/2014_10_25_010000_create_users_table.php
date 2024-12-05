@@ -19,12 +19,11 @@ return new class extends Migration
             $table->string('avatar')->nullable()->default('default.jpg');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('premium')->default(false);
-            $table->rememberToken();
+           $table->rememberToken();
             $table->timestamps();
         });
-        User::create(['name' => 'Manuel', 'email' => 'mngabilondo@gmail.com', 'nivel' => 1, 'password' => Hash::make('03Febrero04'), 'email_verified_at' => '2023-01-02 17:04:58', 'premium' => true]);
-        User::create(['name' => 'Cliente1', 'email' => 'cliente@gmail.com', 'password' => Hash::make('12345678'), 'email_verified_at' => '2023-01-02 17:04:58', 'premium' => false]);
+        User::create(['name' => 'David', 'email' => 'davinchu00@gmail.com', 'nivel' => 1, 'password' => Hash::make('060704'), 'email_verified_at' => '2023-01-02 17:04:58']);
+        User::create(['name' => 'Cliente1', 'email' => 'cliente@gmail.com', 'password' => Hash::make('12345678'), 'email_verified_at' => '2023-01-02 17:04:58']);
     }
 
 

@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 @section('title')
     Perfil de usuario
@@ -9,84 +8,26 @@
 
 @endsection
 <div class="container">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#info-perfil">Información de perfil</a>
-        </li>
-         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#plan-cuenta">Plan de la cuenta</a>
-        </li> 
-    </ul>
 
-    <div class="tab-content">
-<div class="tab-pane " id="plan-cuenta">
-        <div class="card p-4">
-    <div class="row">
-      <section id="pricing" class="pricing section-bg py-5">
-    <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="box" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Gratis</h3>
-                    <h4><sup></sup>0<span> €/ mes</span></h4>
-                    <ul>
-                        <li>Máximo 4 rutinas</li>
-                        <li>2 posts diarios</li>
-                        <li>Máximo 3 citas al mes</li>
-                        <li class="na">Acceso a vídeos</li>
-                        <li class="na">Citas ilimitadas</li>
-                    </ul>
-                    @if(auth()->user()->premium == 1)
-                    <div class="btn-wrap">
-                        <a href="{{route('subscripcion')}}" class="btn btn-buy">Pasarse Ahora</a>
-                    </div>
-                    @endif
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Premium</h3>
-                    <h4><sup>€</sup>7'<span>99 €/ mes</span></h4>
-                    <ul>
-                        <li>Rutinas ilimitadas</li>
-                        <li>Citas ilimitadas</li>
-                        <li>Sin máximo de posts</li>
-                        <li>Acceso a videos</li>
-                        <li >Citas ilimitadas</li>
-                    </ul>
-                    @if(auth()->user()->premium == 0)
-                    <div class="btn-wrap">
-                        <a href="{{route('subscripcion')}}" class="btn btn-buy">Pasarse Ahora</a>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-    </div>
-</div>
-</div>
 
 
         <div class="tab-pane active" id="info-perfil">
-   
+
 <div class="container my-5">
     <div class="row">
         <!-- Avatar Section -->
-        <div class="col-md-3 text-center mb-4">
+        <div class=" mb-4">
             <div class="card p-4">
-                <img src="{{ $user->avatar ? URL::asset('storage/' . $user->avatar) : URL::asset('images/default-avatar.png') }}" alt="Avatar" class="img-fluid rounded-circle mb-2">
+<div class="row">
+                <div class="col-md-3">
                 <h4>{{ $user->name }}</h4>
-            </div>
-        </div>
+                    <img src="{{ $user->avatar ? URL::asset('storage/' . $user->avatar) : URL::asset('images/default-avatar.png') }}" alt="Avatar" class="img-fluid rounded-circle mb-2" style="object-fit: cover";
+                    >
 
-        <!-- User Information Section -->
-        <div class="col-md-9">
-            <div class="card p-4 mb-4">
+            </div>
+
+<div class="col-md-9">
+
                 <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -102,12 +43,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="avatar" class="form-label">Avatar:</label>
+                        <label for="avatar" class="form-label">Foto de perfil:</label>
                         <input type="file" id="avatar" name="avatar" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary bg-black">Actualizar perfil</button>
                 </form>
+                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -117,12 +60,6 @@
         <div class="col-12">
             <div class="card p-4">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <i class="fas fa-globe"></i> <span>https://{{ $user->name }}.com</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <i class="fab fa-github"></i> <span>Git{{ $user->name }}</span>
-                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <i class="fab fa-twitter"></i> <span>@the{{ $user->name }}</span>
                     </li>
@@ -141,9 +78,9 @@
 <!-- CSS -->
 <style>
 .img-fluid {
-    width: 60%; 
+    width: 60%;
     height: 80%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 .pricing .box {
             padding: 5%;
@@ -159,11 +96,11 @@
             border: 2px solid #007bff;
         }
         .pricing .box h3 {
-            
+
             margin: 2%;
         }
         .pricing .box h4 {
-            
+
             margin-bottom: 2%;
         }
         .pricing .box ul {
@@ -182,7 +119,7 @@
         .pricing .btn-buy {
             background: #007bff;
             color: #fff;
-           
+
             text-transform: uppercase;
             transition: 0.3s;
         }
