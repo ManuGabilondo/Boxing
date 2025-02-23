@@ -1,3 +1,13 @@
+
+Project done as a Bachelor's thesis for a degree in Software Development, an application to help beginners in the world of boxing with advice, public forums, available trainers, and an appointment system using APIs and SQL databases.
+/
+Proyecto realizado como trabajo de fin de grado para la titulación de Técnico en Desarrollo de Software, una aplicación para ayudar a los principiantes en el mundo del boxeo con consejos, foros públicos, entrenadores a disposición y un sistema de citas mediante el uso de API y bases de datos SQL.
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
